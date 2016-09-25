@@ -1,8 +1,11 @@
 import numpy as np
 from scipy.sparse import csr_matrix
-from exploring_data import X, selector, featurespace_dense, Y
+from exploring_data import X_train, X_test, selector, featurespace_dense_test, featurespace_dense_train, Y_train
 from collections import Counter
 import pandas as pd
+from sklearn.ensemble import RandomForestClassifier
+from numpy import savetxt
+from sklearn.metrics import accuracy_score, classification_report
 
 
 def load_sparse_csr(filename):
@@ -11,13 +14,13 @@ def load_sparse_csr(filename):
                       shape=loader['shape'])
 
 F = load_sparse_csr('features.npz')
-v = selector.fit(X)
+v = selector.fit(X_train)
 
 var = v.variances_
 
 # print "Features with highest variance", np.argsort(var)[-10:]
 
-thresh_0 = X[:, var > 0.11]
+# thresh_0 = X[:, var > 0.11]
 
 # print "thresh0: ", thresh_0
 #
@@ -41,29 +44,69 @@ idx = np.where(v.variances_ > 0.08)[0]
 # print "Discarded: ", discarded
 
 
-df_reduced = pd.DataFrame(np.nan, index=range(800), columns=idx)
+df_reduced_train = pd.DataFrame(np.nan, index=range(800), columns=idx)
+df_reduced_test = pd.DataFrame(np.nan, index=range(350), columns=idx)
 
 
-def get_value_featurespace(row, column):
-    return featurespace_dense[row, column]
+def get_value_featurespace(row, column, test_train):
+    if test_train == "test":
+        return featurespace_dense_test[row, column]
+    else:
+        return featurespace_dense_train[row, column]
 
 
-def populate_df_reduced(row, col):
-    df_reduced.xs(row)[col] = get_value_featurespace(row, col)
+def populate_df_reduced(row, col, test_train):
+    if test_train == "test":
+        df_reduced_test.xs(row)[col] = get_value_featurespace(row, col, "test")
+    else:
+        df_reduced_train.xs(row)[col] = get_value_featurespace(row, col, "train")
 
 
-for i in range(800):
-    for j in idx:
-        populate_df_reduced(i, j)
-
-
-result = pd.concat([df_reduced, Y], axis=1)
-
-print result
-
-
+def create_new_featurespace():
+    for i in range(800):
+        for j in idx:
+            populate_df_reduced(i, j, "test")
+    for i in range(350):
+        for j in idx:
+            populate_df_reduced(i, j, "train")
 
 
 
+# result = pd.concat([df_reduced, Y], axis=1)
+# new_pos = result['Active']
+# result.drop(labels=['Active'], axis=1,inplace=True)
+# result.insert(0, 'Active', new_pos)
+# print result
+
+print "New shape of train set", df_reduced_train.shape
+print "New shape of test set", df_reduced_test.shape
+
+# train_features = result[: 1:].values
+# train_features = train_features[:, None]
+#
+# print train_features.shape
+
+train_target = X_train['Active'].values
+#
+# # Trying out RandomForestClassifier
+#
+clf = RandomForestClassifier(n_estimators=100)
+
+clf.fit(df_reduced_train.values, train_target.values)
+
+#Predicting for test
+
+clf.predict()
+
+
+savetxt('rf_predictions.txt', clf.predict(df_reduced.values), fmt='%i')
+
+Z = clf.predict(df_reduced.values)
+
+print "Accuracy = %0.2f" % (accuracy_score(Y.values, Z))
+
+print ("Classification report: ")
+
+print (classification_report(Y.values, Z, target_names=['Inactive', 'Active']))
 
 
