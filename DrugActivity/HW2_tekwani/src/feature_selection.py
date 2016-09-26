@@ -20,7 +20,7 @@ var = v.variances_
 
 # print "Features with highest variance", np.argsort(var)[-10:]
 
-# thresh_0 = X[:, var > 0.11]
+# thresh_0 = X[:, var > 0.03]
 
 # print "thresh0: ", thresh_0
 #
@@ -28,7 +28,7 @@ var = v.variances_
 # print thresh_0.shape
 
 #feature numbers for the ones that are left
-idx = np.where(v.variances_ > 0.08)[0]
+idx = np.where(v.variances_ > 0.14)[0]
 
 # print "Feature numbers with highest variance" , idx
 # print idx.shape
@@ -65,11 +65,14 @@ def populate_df_reduced(row, col, test_train):
 def create_new_featurespace():
     for i in range(800):
         for j in idx:
-            populate_df_reduced(i, j, "test")
+            populate_df_reduced(i, j, "train")
     for i in range(350):
         for j in idx:
-            populate_df_reduced(i, j, "train")
+            populate_df_reduced(i, j, "test")
 
+
+# Building the new test and train feature spaces
+create_new_featurespace()
 
 
 # result = pd.concat([df_reduced, Y], axis=1)
@@ -81,32 +84,32 @@ def create_new_featurespace():
 print "New shape of train set", df_reduced_train.shape
 print "New shape of test set", df_reduced_test.shape
 
-# train_features = result[: 1:].values
-# train_features = train_features[:, None]
-#
-# print train_features.shape
+train_target = Y_train.values
 
-train_target = X_train['Active'].values
-#
-# # Trying out RandomForestClassifier
-#
+print "New test set: ", df_reduced_test
+
+print "-----------------------------------------------"
+
+print "New train set: ", df_reduced_train
+
 clf = RandomForestClassifier(n_estimators=100)
 
-clf.fit(df_reduced_train.values, train_target.values)
+#Fitting RandomForestClassifier on train data
 
-#Predicting for test
+clf.fit(df_reduced_train.values, train_target)
 
-clf.predict()
-
-
-savetxt('rf_predictions.txt', clf.predict(df_reduced.values), fmt='%i')
-
-Z = clf.predict(df_reduced.values)
-
-print "Accuracy = %0.2f" % (accuracy_score(Y.values, Z))
-
-print ("Classification report: ")
-
-print (classification_report(Y.values, Z, target_names=['Inactive', 'Active']))
+#Predicting for test data
+Z = clf.predict(df_reduced_test.values)
+savetxt('rf_predictions.txt', Z, fmt='%i')
 
 
+print "Predictions for test: ", Z
+
+#
+# # print "Accuracy = %0.2f" % (accuracy_score(train_target.values, Z))
+#
+# # print ("Classification report: ")
+#
+# # print (classification_report(Y.values, Z, target_names=['Inactive', 'Active']))
+#
+#

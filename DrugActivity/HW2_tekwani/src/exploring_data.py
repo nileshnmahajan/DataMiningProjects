@@ -10,7 +10,6 @@ from scipy.sparse import csr_matrix
 df_train = pd.read_csv('../data/train.csv', sep='\t', index_col=False, header=None,
                        names=['Active', 'Structure'])
 
-
 df_test = pd.read_csv('../data/test.csv', index_col=False, header=None, names=['Structure'])
 
 
@@ -49,5 +48,5 @@ vt = selector.fit_transform(X_train)
 
 t = time()
 save_sparse_matrix(vt)
-print "Variance threshold calculated in ", (time() -t)
+print "Variance threshold calculated in ", (time() - t)
 
