@@ -67,14 +67,16 @@ def create_new_featurespace():
 create_new_featurespace()
 
 
-clf = SGDClassifier(n_iter=3000, loss='log', penalty='elasticnet', shuffle=True)
+clf = SGDClassifier(n_iter=10000, loss='modified_huber', penalty='elasticnet', shuffle=True,
+                    class_weight={0:0.1}, alpha=0.07)
+
 clf.fit(df_reduced_train.values, y_train)
 
 
 y_pred = clf.predict(df_reduced_test.values)
 print "Predicted values" , y_pred
 
-np.savetxt('../predictions/sgd_predictions_7_withoutclasswt.txt', y_pred, fmt='%i')
+np.savetxt('../predictions/sgd_predictions_8', y_pred, fmt='%i')
 
 print ("Finished classifying 350 drugs in: ", (time() - start))
 
