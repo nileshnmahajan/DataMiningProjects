@@ -10,10 +10,10 @@ subprocess.call(['speech-dispatcher'])        #start speech dispatcher
 
 
 parameters = [
-                {'n_iter': [3000, 3250],
+                {'n_iter': [3000, 6000, 10000, 12000],
                  'penalty': ['l2', 'elasticnet'],
                  'loss': ['hinge', 'log', 'perceptron', 'modified_huber'],
-                 'alpha': [0.03, 0.04],
+                 'alpha': [0.03, 0.04, 0.07],
                  'shuffle': [True],
                  'class_weight': [{1:0.9}, {0: 0.1}]
                  }

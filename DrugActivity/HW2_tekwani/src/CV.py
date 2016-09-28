@@ -8,6 +8,7 @@ from sklearn.linear_model import SGDClassifier
 from numpy import savetxt
 from sklearn.metrics import accuracy_score, classification_report, f1_score, precision_score, recall_score
 from sklearn.cross_validation import StratifiedKFold
+from imblearn.over_sampling import SMOTE
 
 v = selector.fit(X)
 start = time()
@@ -39,7 +40,7 @@ create_new_featurespace()
 # print "New train set: ", df_reduced_train
 
 
-skf = StratifiedKFold(y, n_folds=2, shuffle=True)
+skf = StratifiedKFold(y, n_folds=15, shuffle=True)
 
 for train_index, test_index in skf:
     # print ("TRAIN:", train_index, "TEST:", test_index)
@@ -48,18 +49,37 @@ for train_index, test_index in skf:
 
 
 
-# print "Training set", X_train, y_train
-# print "Test set", X_test, y_test
+print "X_test: ", X_test
+print "X_test shape:", X_test.shape
 
-# clf = SGDClassifier(n_iter=300, alpha=0.01, loss='hinge')
-clf = SGDClassifier(n_iter=3000, loss='log', class_weight={0:0.1}, penalty='elasticnet', shuffle=True)
-clf.fit(X_train, y_train)
+# SMOTE starts here
+ratio ='auto'
 
+smote = SMOTE(ratio='auto', kind='svm')
+smox, smoy = smote.fit_sample(X_train, y_train)
+
+
+print smox.shape
+print smoy.shape
+
+# # SMOTE ends
+
+print "Time elapsed: ", time() - start
+
+
+# # print "Training set", X_train, y_train
+# # print "Test set", X_test, y_test
+#
+# # clf = SGDClassifier(n_iter=300, alpha=0.01, loss='hinge')
+clf = SGDClassifier(n_iter=12000, loss='log', class_weight={1:9, 0:1}, penalty='elasticnet', shuffle=True)
+# clf.fit(X_train, y_train)
+clf.fit(smox, smoy)
+
+#
 Z = clf.predict(X_test)
-# print Z
+print Z
 
 
-print "Classified 400 drugs in : ", (time() - start)
 # print "Accuracy: ",  accuracy_score(y_test, Z)
 # print "Precision: ", precision_score(y_test, Z)
 # print "Recall: ", recall_score(y_test, Z)

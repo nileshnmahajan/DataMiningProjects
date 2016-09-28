@@ -1,9 +1,17 @@
 from sklearn.feature_selection import VarianceThreshold
 import numpy as np
+from numpy import savetxt
 from time import time
 from sklearn.linear_model import SGDClassifier
 from sklearn.feature_extraction.text import CountVectorizer
+from scipy.sparse import csr_matrix
+from sklearn.cross_validation import StratifiedKFold
 import pandas as pd
+from imblearn.over_sampling import SMOTE
+import subprocess
+
+
+subprocess.call(['speech-dispatcher'])        #start speech dispatcher
 
 df_train = pd.read_csv('../data/train.csv', sep='\t', index_col=False, header=None,
                        names=['Active', 'Structure'])
@@ -66,28 +74,32 @@ def create_new_featurespace():
 #Building the new, reduced featurespace
 create_new_featurespace()
 
-
-clf = SGDClassifier(n_iter=3000, loss='log', penalty='elasticnet', shuffle=True)
-clf.fit(df_reduced_train.values, y_train)
+print "Created new featurespace"
 
 
-y_pred = clf.predict(df_reduced_test.values)
+print "Running SMOTE"
+# SMOTE starts here
+ratio ='auto'
+
+smote = SMOTE(ratio=ratio, kind='regular')
+smox, smoy = smote.fit_sample(df_reduced_train.toarray(), y_train)
+
+print "Running the classifier"
+
+clf = SGDClassifier(n_iter=3000, loss='log', class_weight={1:9}, penalty='elasticnet', shuffle=True)
+# clf.fit(X_train, y_train)
+clf.fit(smox, smoy)
+
+print "Predicting test output..."
+
+clf.predict(X_test)
+
+y_pred = clf.predict(X_test)
 print "Predicted values" , y_pred
 
-np.savetxt('../predictions/sgd_predictions_7_withoutclasswt.txt', y_pred, fmt='%i')
+np.savetxt('../predictions/sgd_predictions_5.txt', y_pred, fmt='%i')
 
 print ("Finished classifying 350 drugs in: ", (time() - start))
 
+subprocess.call(['spd-say', '"Finished execution."'])
 
-#
-# print "Reduced features_ train: ", df_reduced_train
-# print "Reduced features test: ", df_reduced_test
-
-
-# print "X_train: ", X_train
-#
-# print "X_test: ", X_test
-#
-# print "Shape of X_train", X_train.shape
-#
-# print "Shape of X_test", X_test.shape

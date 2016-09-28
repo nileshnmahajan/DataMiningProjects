@@ -11,16 +11,16 @@ ratio ='auto'
 smote = SMOTE(ratio=ratio, kind='regular')
 smox, smoy = smote.fit_sample(X_train.toarray(), y_train)
 
-print "Smote X_train " ,smox
-print "Smote Y train ", smoy
+print "Smote X_train ",smox
 
 
 
 
-nb.fit(smox, smoy)
-start = time()
-y_pred = nb.predict(X_test)
-print "Predicted values" , y_pred
-np.savetxt('../predictions/nb_predictions.txt', y_pred, fmt='%i')
+#
+# nb.fit(smox, smoy)
+# start = time()
+# y_pred = nb.predict(X_test)
+# print "Predicted values" , y_pred
+# np.savetxt('../predictions/nb_predictions.txt', y_pred, fmt='%i')
 
 print ("Finished classifying 350 drugs in: ", (time() - start))
