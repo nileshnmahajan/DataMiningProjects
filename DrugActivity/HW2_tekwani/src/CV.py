@@ -52,44 +52,6 @@ for train_index, test_index in skf:
 print "X_test: ", X_test
 print "X_test shape:", X_test.shape
 
-# SMOTE starts here
-ratio ='auto'
-
-smote = SMOTE(ratio='auto', kind='svm')
-smox, smoy = smote.fit_sample(X_train, y_train)
-
-
-print smox.shape
-print smoy.shape
-
-# # SMOTE ends
-
 print "Time elapsed: ", time() - start
 
 
-# # print "Training set", X_train, y_train
-# # print "Test set", X_test, y_test
-#
-# # clf = SGDClassifier(n_iter=300, alpha=0.01, loss='hinge')
-clf = SGDClassifier(n_iter=12000, loss='log', class_weight={1:9, 0:1}, penalty='elasticnet', shuffle=True)
-# clf.fit(X_train, y_train)
-clf.fit(smox, smoy)
-
-#
-Z = clf.predict(X_test)
-print Z
-
-
-# print "Accuracy: ",  accuracy_score(y_test, Z)
-# print "Precision: ", precision_score(y_test, Z)
-# print "Recall: ", recall_score(y_test, Z)
-# print "F1 score: " , f1_score(y_test, Z,  average='binary')
-
-print("Classification report")
-
-print "-------------------------------"
-
-print classification_report(y_test, Z, target_names=['Inactive', 'Active'])
-
-
-print ("Finished in: ", (time() - start))

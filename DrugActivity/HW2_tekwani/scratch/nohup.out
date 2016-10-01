@@ -1,0 +1,18 @@
+SMOX:  [[ 0.  0.  0. ...,  0.  1.  0.]
+ [ 0.  0.  0. ...,  0.  0.  0.]
+ [ 0.  0.  0. ...,  0.  0.  0.]
+ ..., 
+ [ 0.  0.  0. ...,  0.  0.  0.]
+ [ 0.  0.  0. ...,  0.  0.  0.]
+ [ 0.  0.  0. ...,  0.  0.  0.]]
+SMOX shape: (1444, 100000)
+SMOY:  [0 0 0 ..., 1 1 1]
+SMOY shape: (1444,)
+<type 'numpy.ndarray'>
+<type 'numpy.ndarray'>
+1444
+Time to fit VarianceThreshold:  2.85391712189
+SMOTE x after feature reduction (1444, 100000)
+SMOTE y after feature reduction (1444,)
+df_reduced_test shape (350, 1925)
+Time to generate reduced feature set 869.780851126

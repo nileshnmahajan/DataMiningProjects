@@ -1,0 +1,25 @@
+/usr/bin/python2.7 /home/bhavika/PycharmProjects/DrugActivity/HW2_tekwani/src/sgd.py
+Distribution of classes before resampling Counter({0: 722, 1: 78})
+/home/bhavika/.local/lib/python2.7/site-packages/imblearn/under_sampling/nearmiss.py:161: UserWarning: The number of the samples to be selected is larger than the number of samples available. The balancing ratio cannot be ensure and all samples will be returned.
+  warnings.warn('The number of the samples to be selected is larger than'
+Distribution of classes after resampling Counter({0: 156, 1: 78})
+Time to fit VarianceThreshold:  0.000262975692749
+NearMiss x after feature reduction (234, 100000)
+NearMiss y after feature reduction (234,)
+df_reduced_test shape (350, 2540)
+df_reduced_train shape (234, 2540)
+Time to generate reduced feature set 125.709733009
+Time to run 4000 iter of classifier 140.940909863
+Predicted values:  [0 0 0 0 0 0 0 1 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 1 0 0 1 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1
+ 1 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0
+ 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 1 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 0]
+('Finished classifying 350 drugs in: ', 141.0336048603058)
+
+Process finished with exit code 0
