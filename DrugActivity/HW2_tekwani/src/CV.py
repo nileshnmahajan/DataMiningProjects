@@ -1,26 +1,24 @@
 import numpy as np
 from time import time
 from scipy.sparse import csr_matrix
-from feature_creation import X, y, featurespace_dense_X, selector
+from feature_creation import X_train, y_train, idx, featurespace_dense_X_train
 from collections import Counter
 import pandas as pd
 from sklearn.linear_model import SGDClassifier
 from numpy import savetxt
-from sklearn.metrics import accuracy_score, classification_report, f1_score, precision_score, recall_score
+from sklearn.metrics import accuracy_score, classification_report, f1_score, precision_score, recall_score, roc_auc_score
 from sklearn.cross_validation import StratifiedKFold
-from imblearn.over_sampling import SMOTE
 
-v = selector.fit(X)
+
 start = time()
 
 #feature numbers for the ones that are left
-idx = np.where(v.variances_ > 0.04)[0]
 
 df_reduced_train = pd.DataFrame(np.nan, index=range(800), columns=idx)
 
 
 def get_value_featurespace(row, column, test_train):
-    return featurespace_dense_X[row, column]
+    return featurespace_dense_X_train[row, column]
 
 
 def populate_df_reduced(row, col, test_train):
@@ -36,22 +34,41 @@ def create_new_featurespace():
 # Building the new test and train feature spaces
 create_new_featurespace()
 
-# print "New shape of train set", df_reduced_train.shape
-# print "New train set: ", df_reduced_train
+print "New shape of train set", df_reduced_train.shape
+print "New train set: ", df_reduced_train
 
 
-skf = StratifiedKFold(y, n_folds=15, shuffle=True)
+skf = StratifiedKFold(y_train, n_folds=5, shuffle=True)
 
 for train_index, test_index in skf:
     # print ("TRAIN:", train_index, "TEST:", test_index)
-    X_train, y_train = df_reduced_train.iloc[train_index], y[train_index]
-    X_test, y_test = df_reduced_train.iloc[test_index], y[test_index]
+    X_train, y_true = df_reduced_train.iloc[train_index], y_train[train_index]
+    X_test, y_test = df_reduced_train.iloc[test_index], y_train[test_index]
 
 
 
-print "X_test: ", X_test
-print "X_test shape:", X_test.shape
+# print "Training set", X_train, y_train
+# print "Test set", X_test, y_test
 
-print "Time elapsed: ", time() - start
+clf = SGDClassifier(n_iter=10000, alpha=0.07, loss='modified_huber', penalty='elasticnet', shuffle=True)
+clf.fit(X_train, y_true)
 
 
+Z = clf.predict(X_test)
+# print Z
+
+
+print "Classified 400 drugs in : ", (time() - start)
+# print "Accuracy: ",  accuracy_score(y_test, Z)
+print "Precision: ", precision_score(y_test, Z)
+print "Recall: ", recall_score(y_test, Z)
+print "F1 score: " , f1_score(y_test, Z,  average='binary')
+
+print("Classification report")
+
+print "-------------------------------"
+
+print classification_report(y_test, Z, target_names=['Inactive', 'Active'])
+
+
+print('auc', roc_auc_score(y_test, clf.predict_proba(X_test)[:, 1]))

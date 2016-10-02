@@ -1,0 +1,1731 @@
+No of features:  2115
+Time taken to fit VarianceThreshold:  1.31414198875
+------------
+RandomUnderSampler(random_state=None, ratio='auto', replacement=True,
+          return_indices=False) 
+------------
+-------------
+LogisticRegression(C=1.0, class_weight=None, dual=False, fit_intercept=True,
+          intercept_scaling=1, max_iter=100, multi_class='ovr', n_jobs=1,
+          penalty='l2', random_state=None, solver='liblinear', tol=0.0001,
+          verbose=0, warm_start=False)   
+-----------------
+
+('Accuracy score', 0.8208333333333333)
+('auc', 0.91644960929673402)
+
+             precision    recall  f1-score   support
+
+          0       0.98      0.82      0.89       217
+          1       0.33      0.87      0.48        23
+
+avg / total       0.92      0.82      0.85       240
+
+
+-----------------
+------------
+RandomUnderSampler(random_state=None, ratio='auto', replacement=True,
+          return_indices=False) 
+------------
+-------------
+SVC(C=1.0, cache_size=200, class_weight=None, coef0=0.0,
+  decision_function_shape=None, degree=3, gamma='auto', kernel='rbf',
+  max_iter=-1, probability=True, random_state=None, shrinking=True,
+  tol=0.001, verbose=False)   
+-----------------
+
+('Accuracy score', 0.46666666666666667)
+('auc', 0.087357243037467447)
+
+             precision    recall  f1-score   support
+
+          0       0.98      0.42      0.59       217
+          1       0.14      0.91      0.25        23
+
+avg / total       0.90      0.47      0.55       240
+
+
+-----------------
+------------
+RandomUnderSampler(random_state=None, ratio='auto', replacement=True,
+          return_indices=False) 
+------------
+-------------
+DecisionTreeClassifier(class_weight=None, criterion='gini', max_depth=None,
+            max_features=None, max_leaf_nodes=None, min_samples_leaf=1,
+            min_samples_split=2, min_weight_fraction_leaf=0.0,
+            presort=False, random_state=None, splitter='best')   
+-----------------
+
+('Accuracy score', 0.62916666666666665)
+('auc', 0.71719094369865766)
+
+             precision    recall  f1-score   support
+
+          0       0.97      0.61      0.75       217
+          1       0.18      0.83      0.30        23
+
+avg / total       0.90      0.63      0.70       240
+
+
+-----------------
+------------
+RandomUnderSampler(random_state=None, ratio='auto', replacement=True,
+          return_indices=False) 
+------------
+-------------
+RandomForestClassifier(bootstrap=True, class_weight=None, criterion='gini',
+            max_depth=None, max_features='auto', max_leaf_nodes=None,
+            min_samples_leaf=1, min_samples_split=2,
+            min_weight_fraction_leaf=0.0, n_estimators=10, n_jobs=1,
+            oob_score=False, random_state=None, verbose=0,
+            warm_start=False)   
+-----------------
+
+('Accuracy score', 0.77916666666666667)
+('auc', 0.8685634141454619)
+
+             precision    recall  f1-score   support
+
+          0       0.97      0.78      0.86       217
+          1       0.27      0.78      0.40        23
+
+avg / total       0.90      0.78      0.82       240
+
+
+-----------------
+------------
+RandomUnderSampler(random_state=None, ratio='auto', replacement=True,
+          return_indices=False) 
+------------
+-------------
+KNeighborsClassifier(algorithm='auto', leaf_size=30, metric='minkowski',
+           metric_params=None, n_jobs=1, n_neighbors=5, p=2,
+           weights='uniform')   
+-----------------
+
+('Accuracy score', 0.32500000000000001)
+('auc', 0.80214385894610296)
+
+             precision    recall  f1-score   support
+
+          0       1.00      0.25      0.40       217
+          1       0.12      1.00      0.22        23
+
+avg / total       0.92      0.33      0.39       240
+
+
+-----------------
+------------
+TomekLinks(n_jobs=-1, random_state=None, return_indices=False) 
+------------
+-------------
+LogisticRegression(C=1.0, class_weight=None, dual=False, fit_intercept=True,
+          intercept_scaling=1, max_iter=100, multi_class='ovr', n_jobs=1,
+          penalty='l2', random_state=None, solver='liblinear', tol=0.0001,
+          verbose=0, warm_start=False)   
+-----------------
+
+('Ac/usr/local/lib/python2.7/dist-packages/sklearn/metrics/classification.py:1074: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples.
+  'precision', 'predicted', average, warn_for)
+curacy score', 0.9375)
+('auc', 0.91785213384091358)
+
+             precision    recall  f1-score   support
+
+          0       0.94      1.00      0.97       217
+          1       0.90      0.39      0.55        23
+
+avg / total       0.94      0.94      0.93       240
+
+
+-----------------
+------------
+TomekLinks(n_jobs=-1, random_state=None, return_indices=False) 
+------------
+-------------
+SVC(C=1.0, cache_size=200, class_weight=None, coef0=0.0,
+  decision_function_shape=None, degree=3, gamma='auto', kernel='rbf',
+  max_iter=-1, probability=True, random_state=None, shrinking=True,
+  tol=0.001, verbose=False)   
+-----------------
+
+('Accuracy score', 0.90416666666666667)
+('auc', 0.90042075736325389)
+
+             precision    recall  f1-score   support
+
+          0       0.90      1.00      0.95       217
+          1       0.00      0.00      0.00        23
+
+avg / total       0.82      0.90      0.86       240
+
+
+-----------------
+------------
+TomekLinks(n_jobs=-1, random_state=None, return_indices=False) 
+------------
+-------------
+DecisionTreeClassifier(class_weight=None, criterion='gini', max_depth=None,
+            max_features=None, max_leaf_nodes=None, min_samples_leaf=1,
+            min_samples_split=2, min_weight_fraction_leaf=0.0,
+            presort=False, random_state=None, splitter='best')   
+-----------------
+
+('Accuracy score', 0.90000000000000002)
+('auc', 0.69204568222801033)
+
+             precision    recall  f1-score   support
+
+          0       0.94      0.95      0.94       217
+          1       0.48      0.43      0.45        23
+
+avg / total       0.90      0.90      0.90       240
+
+
+-----------------
+------------
+TomekLinks(n_jobs=-1, random_state=None, return_indices=False) 
+------------
+-------------
+RandomForestClassifier(bootstrap=True, class_weight=None, criterion='gini',
+            max_depth=None, max_features='auto', max_leaf_nodes=None,
+            min_samples_leaf=1, min_samples_split=2,
+            min_weight_fraction_leaf=0.0, n_estimators=10, n_jobs=1,
+            oob_score=False, random_state=None, verbose=0,
+            warm_start=False)   
+-----------------
+
+('Accuracy score', 0.9291666666666667)
+('auc', 0.84582248046483688)
+
+             precision    recall  f1-score   support
+
+          0       0.93      1.00      0.96       217
+          1       1.00      0.26      0.41        23
+
+avg / total       0.93      0.93      0.91       240
+
+
+-----------------
+------------
+TomekLinks(n_jobs=-1, random_state=None, return_indices=False) 
+------------
+-------------
+KNeighborsClassifier(algorithm='auto', leaf_size=30, metric='minkowski',
+           metric_params=None, n_jobs=1, n_neighbors=5, p=2,
+           weights='uniform')   
+-----------------
+
+('Accuracy score', 0.84999999999999998)
+('auc', 0.78361049889801648)
+
+             precision    recall  f1-score   support
+
+          0       0.93      0.90      0.92       217
+          1       0.29      0.39      0.33        23
+
+avg / total       0.87      0.85      0.86       240
+
+
+-----------------
+------------
+ClusterCentroids(n_jobs=-1, random_state=None, ratio='auto') 
+------------
+-------------
+LogisticRegression(C=1.0, class_weight=None, dual=False, fit_intercept=True,
+          intercept_scaling=1, max_iter=100, multi_class='ovr', n_jobs=1,
+          penalty='l2', random_state=None, solver='liblinear', tol=0.0001,
+          verbose=0, warm_start=False)   
+-----------------
+
+('Accuracy score', 0.90833333333333333)
+('auc', 0.87377279102384298)
+
+             precision    recall  f1-score   support
+
+          0       0.95      0.95      0.95       217
+          1       0.52      0.52      0.52        23
+
+avg / total       0.91      0.91      0.91       240
+
+
+-----------------
+------------
+ClusterCentroids(n_jobs=-1, random_state=None, ratio='auto') 
+------------
+-------------
+SVC(C=1.0, cache_size=200, class_weight=None, coef0=0.0,
+  decision_function_shape=None, degree=3, gamma='auto', kernel='rbf',
+  max_iter=-1, probability=True, random_state=None, shrinking=True,
+  tol=0.001, verbose=False)   
+-----------------
+
+('Accuracy score', 0.20000000000/home/bhavika/.local/lib/python2.7/site-packages/imblearn/under_sampling/nearmiss.py:161: UserWarning: The number of the samples to be selected is larger than the number of samples available. The balancing ratio cannot be ensure and all samples will be returned.
+  warnings.warn('The number of the samples to be selected is larger than'
+000001)
+('auc', 0.17291124023241833)
+
+             precision    recall  f1-score   support
+
+          0       1.00      0.12      0.21       217
+          1       0.11      1.00      0.19        23
+
+avg / total       0.91      0.20      0.21       240
+
+
+-----------------
+------------
+ClusterCentroids(n_jobs=-1, random_state=None, ratio='auto') 
+------------
+-------------
+DecisionTreeClassifier(class_weight=None, criterion='gini', max_depth=None,
+            max_features=None, max_leaf_nodes=None, min_samples_leaf=1,
+            min_samples_split=2, min_weight_fraction_leaf=0.0,
+            presort=False, random_state=None, splitter='best')   
+-----------------
+
+('Accuracy score', 0.45000000000000001)
+('auc', 0.50150270486876369)
+
+             precision    recall  f1-score   support
+
+          0       0.90      0.44      0.59       217
+          1       0.10      0.57      0.16        23
+
+avg / total       0.83      0.45      0.55       240
+
+
+-----------------
+------------
+ClusterCentroids(n_jobs=-1, random_state=None, ratio='auto') 
+------------
+-------------
+RandomForestClassifier(bootstrap=True, class_weight=None, criterion='gini',
+            max_depth=None, max_features='auto', max_leaf_nodes=None,
+            min_samples_leaf=1, min_samples_split=2,
+            min_weight_fraction_leaf=0.0, n_estimators=10, n_jobs=1,
+            oob_score=False, random_state=None, verbose=0,
+            warm_start=False)   
+-----------------
+
+('Accuracy score', 0.48333333333333334)
+('auc', 0.68312963334001209)
+
+             precision    recall  f1-score   support
+
+          0       0.95      0.45      0.61       217
+          1       0.13      0.78      0.23        23
+
+avg / total       0.87      0.48      0.58       240
+
+
+-----------------
+------------
+ClusterCentroids(n_jobs=-1, random_state=None, ratio='auto') 
+------------
+-------------
+KNeighborsClassifier(algorithm='auto', leaf_size=30, metric='minkowski',
+           metric_params=None, n_jobs=1, n_neighbors=5, p=2,
+           weights='uniform')   
+-----------------
+
+('Accuracy score', 0.90416666666666667)
+('auc', 0.5)
+
+             precision    recall  f1-score   support
+
+          0       0.90      1.00      0.95       217
+          1       0.00      0.00      0.00        23
+
+avg / total       0.82      0.90      0.86       240
+
+
+-----------------
+------------
+NearMiss(n_jobs=-1, random_state=None, ratio='auto', return_indices=False,
+     size_ngh=3, ver3_samp_ngh=3, version=1) 
+------------
+-------------
+LogisticRegression(C=1.0, class_weight=None, dual=False, fit_intercept=True,
+          intercept_scaling=1, max_iter=100, multi_class='ovr', n_jobs=1,
+          penalty='l2', random_state=None, solver='liblinear', tol=0.0001,
+          verbose=0, warm_start=False)   
+-----------------
+
+('Accuracy score', 0.82916666666666672)
+('auc', 0.85373672610699258)
+
+             precision    recall  f1-score   support
+
+          0       0.98      0.83      0.90       217
+          1       0.34      0.83      0.48        23
+
+avg / total       0.92      0.83      0.86       240
+
+
+-----------------
+------------
+NearMiss(n_jobs=-1, random_state=None, ratio='auto', return_indices=False,
+     size_ngh=3, ver3_samp_ngh=3, version=1) 
+------------
+-------------
+SVC(C=1.0, cache_size=200, class_weight=None, coef0=0.0,
+  decision_function_shape=None, degree=3, gamma='auto', kernel='rbf',
+  max_iter=-1, probability=True, random_state=None, shrinking=True,
+  tol=0.001, verbose=False)   
+-----------------
+
+('Accuracy score', 0.9458333333333333)
+('auc', 0.20747345221398517)
+
+             precision    recall  f1-score   support
+
+          0       0.96      0.99      0.97       217
+          1       0.81      0.57      0.67        23
+
+avg / total       0.94      0.95      0.94       240
+
+
+-----------------
+------------
+NearMiss(n_jobs=-1, random_state=None, ratio='auto', return_indices=False,
+     size_ngh=3, ver3_samp_ngh=3, version=1) 
+------------
+-------------
+DecisionTreeClassifier(class_weight=None, criterion='gini', max_depth=None,
+            max_features=None, max_leaf_nodes=None, min_samples_leaf=1,
+            min_samples_split=2, min_weight_fraction_leaf=0.0,
+            presort=False, random_state=None, splitter='best')   
+-----------------
+
+('Accuracy score', 0.69999999999999996)
+('auc', 0.73692646764175507)
+
+             precision    recall  f1-score   support
+
+          0       0.97      0.69      0.81       217
+          1       0.21      0.78      0.33        23
+
+avg / total       0.90      0.70      0.76       240
+
+
+-----------------
+------------
+NearMiss(n_jobs=-1, random_state=None, ratio='auto', return_indices=False,
+     size_ngh=3, ver3_samp_ngh=3, version=1) 
+------------
+-------------
+RandomForestClassifier(bootstrap=True, class_weight=None, criterion='gini',
+            max_depth=None, max_features='auto', max_leaf_nodes=None,
+            min_samples_leaf=1, min_samples_split=2,
+            min_weight_fraction_leaf=0.0, n_estimators=10, n_jobs=1,
+            oob_score=False, random_state=None, verbose=0,
+            warm_start=False)   
+-----------------
+
+('Accuracy score', 0.72499999999999998)
+('auc', 0.77379282708875985)
+
+             precision    recall  f1-score   support
+
+          0       0.96      0.73      0.83       217
+          1       0.21      0.70      0.33        23
+
+avg / total       0.89      0.72      0.78       240
+
+
+-----------------
+------------
+NearMiss(n_jobs=-1, random_state=None, ratio='auto', return_indices=False,
+     size_ngh=3, ver3_samp_ngh=3, version=1) 
+------------
+-------------
+KNeighborsClassifier(algorithm='auto', leaf_size=30, metric='minkowski',
+           metric_params=None, n_jobs=1, n_neighbors=5, p=2,
+           weights='uniform')   
+-----------------
+
+('Accuracy score', 0.91666666666666663)
+('auc', 0.7217992386295331)
+
+             precision    recall  f1-score   support
+
+          0       0.93      0.99      0.96       217
+          1       0.67      0.26      0.38        23
+
+avg / total       0.90      0.92      0.90       240
+
+
+-----------------
+------------
+NearMiss(n_jobs=-1, random_state=None, ratio='auto', return_indices=False,
+     size_ngh=3, ver3_samp_ngh=3, version=2) 
+------------
+-------------
+LogisticRegression(C=1.0, class_weight=None, dual=False, fit_intercept=True,
+          intercept_scaling=1, max_iter=100, multi_class='ovr', n_jobs=1,
+          penalty='l2', random_state=None, solver='liblinear', tol=0.0001,
+          verbose=0, warm_start=False)   
+-----------------
+
+('Accuracy score', 0.77500000000000002)
+('auc', 0.91023842917251052)
+
+             precision    recall  f1-score   support
+
+          0       0.98      0.77      0.86       217
+          1       0.28      0.83      0.41        23
+
+avg / total       0.91      0.78      0.82       240
+
+
+-----------------
+------------
+NearMiss(n_jobs=-1, random_state=None, ratio='auto', return_indices=False,
+     size_ngh=3, ver3_samp_ngh=3, version=2) 
+------------
+-------------
+SVC(C=1.0, cache_size=200, class_weight=None, coef0=0.0,
+  decision_function_shape=None, degree=3, gamma='auto', kernel='rbf',
+  max_iter=-1, probability=True, random_state=None, shrinking=True,
+  tol=0.001, verbose=False)   
+-----------------
+
+('Accuracy score', 0.95833333333333337)
+('auc', 0.092766980565017018)
+
+             precision    recall  f1-score   support
+
+          0       0.96      0.99      0.98       217
+          1       0.88      0.65      0.75        23
+
+avg / total       0.96      0.96      0.96       240
+
+
+-----------------
+------------
+NearMiss(n_jobs=-1, random_state=None, ratio='auto', return_indices=False,
+     size_ngh=3, ver3_samp_ngh=3, version=2) 
+------------
+-------------
+DecisionTreeClassifier(class_weight=None, criterion='gini', max_depth=None,
+            max_features=None, max_leaf_nodes=None, min_samples_leaf=1,
+            min_samples_split=2, min_weight_fraction_leaf=0.0,
+            presort=False, random_state=None, splitter='best')   
+-----------------
+
+('Accuracy score', 0.63749999999999996)
+('auc', 0.72179923862953321)
+
+             precision    recall  f1-score   support
+
+          0       0.97      0.62      0.75       217
+          1       0.19      0.83      0.30        23
+
+avg / total       0.90      0.64      0.71       240
+
+
+-----------------
+------------
+NearMiss(n_jobs=-1, random_state=None, ratio='auto', return_indices=False,
+     size_ngh=3, ver3_samp_ngh=3, version=2) 
+------------
+-------------
+RandomForestClassifier(bootstrap=True, class_weight=None, criterion='gini',
+            max_depth=None, max_features='auto', max_leaf_nodes=None,
+            min_samples_leaf=1, min_samples_split=2,
+            min_weight_fraction_leaf=0.0, n_estimators=10, n_jobs=1,
+            oob_score=False, random_state=None, verbose=0,
+            warm_start=False)   
+-----------------
+
+('Accuracy score', 0.82499999999999996)
+('auc', 0.9313764776597877)
+
+             precision    recall  f1-score   support
+
+          0       0.98      0.82      0.89       217
+          1       0.34      0.87      0.49        23
+
+avg / total       0.92      0.82      0.86       240
+
+
+-----------------
+------------
+NearMiss(n_jobs=-1, random_state=None, ratio='auto', return_indices=False,
+     size_ngh=3, ver3_samp_ngh=3, version=2) 
+------------
+-------------
+KNeighborsClassifier(algorithm='auto', leaf_size=30, metric='minkowski',
+           metric_params=None, n_jobs=1, n_neighbors=5, p=2,
+           weights='uniform')   
+-----------------
+
+('Accuracy score', 0.9291666666666667)
+('auc', 0.76678020436786221)
+
+             precision    recall  f1-score   support
+
+          0       0.93      1.00      0.96       217
+          1       0.88      0.30      0.45        23
+
+avg / total       0.93      0.93      0.91       240
+
+
+-----------------
+------------
+NearMiss(n_jobs=-1, random_state=None, ratio='auto', return_indices=False,
+     size_ngh=3, ver3_samp_ngh=3, version=3) 
+------------
+-------------
+LogisticRegression(C=1.0, class_weight=None, dual=False, fit_intercept=True,
+          intercept_scaling=1, max_iter=100, multi_class='ovr', n_jobs=1,
+          penalty='l2', random_state=None, solver='liblinear', tol=0.0001,
+          verbose=0, warm_start=False)   
+-----------------
+
+('Accuracy score', 0.57499999999999996)
+('auc', 0.75395712282107796)
+
+             precision    recall  f1-score   support
+
+          0       0.95      0.56      0.70       217
+          1       0.15      0.74      0.25        23
+
+avg / total       0.88      0.57      0.66       240
+
+
+-----------------
+------------
+NearMiss(n_jobs=-1, random_state=None, ratio='auto', return_indices=False,
+     size_ngh=3, ver3_samp_ngh=3, version=3) 
+------------
+-------------
+SVC(C=1.0, cache_size=200, class_weight=None, coef0=0.0,
+  decision_function_shape=None, degree=3, gamma='auto', kernel='rbf',
+  max_iter=-1, probability=True, random_state=None, shrinking=True,
+  tol=0.001, verbose=False)   
+-----------------
+
+('Accuracy score', 0.09583333333333334)
+('auc', 0.76046884391905434)
+
+             precision    recall  f1-score   support
+
+          0       0.00      0.00      0.00       217
+          1       0.10      1.00      0.17        23
+
+avg / total       0.01      0.10      0.02       240
+
+
+-----------------
+------------
+NearMiss(n_jobs=-1, random_state=None, ratio='auto', return_indices=False,
+     size_ngh=3, ver3_samp_ngh=3, version=3) 
+------------
+-------------
+DecisionTreeClassifier(class_weight=None, criterion='gini', max_depth=None,
+            max_features=None, max_leaf_nodes=None, min_samples_leaf=1,
+            min_samples_split=2, min_weight_fraction_leaf=0.0,
+            presort=False, random_state=None, splitter='best')   
+-----------------
+
+('Accuracy score', 0.74583333333333335)
+('auc', 0.62622720897615702)
+
+             precision    recall  f1-score   support
+
+          0       0.93      0.77      0.85       217
+          1       0.18      0.48      0.27        23
+
+avg / total       0.86      0.75      0.79       240
+
+
+-----------------
+------------
+NearMiss(n_jobs=-1, random_state=None, ratio='auto', return_indices=False,
+     size_ngh=3, ver3_samp_ngh=3, version=3) 
+------------
+-------------
+RandomForestClassifier(bootstrap=True, class_weight=None, criterion='gini',
+            max_depth=None, max_features='auto', max_leaf_nodes=None,
+            min_samples_leaf=1, min_samples_split=2,
+            min_weight_fraction_leaf=0.0, n_estimators=10, n_jobs=1,
+            oob_score=False, random_state=None, verbose=0,
+            warm_start=False)   
+-----------------
+
+('Accuracy score', 0.73750000000000004)
+('auc', 0.63784812662793011)
+
+             precision    recall  f1-score   support
+
+          0       0.92      0.77      0.84       217
+          1       0.16      0.39      0.22        23
+
+avg / total       0.85      0.74      0.78       240
+
+
+-----------------
+------------
+NearMiss(n_jobs=-1, random_state=None, ratio='auto', return_indices=False,
+     size_ngh=3, ver3_samp_ngh=3, version=3) 
+------------
+-------------
+KNeighborsClassifier(algorithm='auto', leaf_size=30, metric='minkowski',
+           metric_params=None, n_jobs=1, n_neighbors=5, p=2,
+           weights='uniform')   
+-----------------
+
+('Accuracy score', 0.89583333333333337)
+('auc', 0.60368663594470051)
+
+             precision    recall  f1-score   support
+
+          0       0.92      0.97      0.94       217
+          1       0.40      0.17      0.24        23
+
+avg / total       0.87      0.90      0.88       240
+
+
+-----------------
+------------
+CondensedNearestNeighbour(n_jobs=-1, n_seeds_S=51, random_state=None,
+             return_indices=False, size_ngh=3) 
+------------
+-------------
+LogisticRegression(C=1.0, class_weight=None, dual=False, fit_intercept=True,
+          intercept_scaling=1, max_iter=100, multi_class='ovr', n_jobs=1,
+          penalty='l2', random_state=None, solver='liblinear', tol=0.0001,
+          verbose=0, warm_start=False)   
+-----------------
+
+('Accuracy score', 0.9458333333333333)
+('auc', 0.88218793828892006)
+
+             precision    recall  f1-score   support
+
+          0       0.95      0.99      0.97       217
+          1       0.86      0.52      0.65        23
+
+avg / total       0.94      0.95      0.94       240
+
+
+-----------------
+------------
+CondensedNearestNeighbour(n_jobs=-1, n_seeds_S=51, random_state=None,
+             return_indices=False, size_ngh=3) 
+------------
+-------------
+SVC(C=1.0, cache_size=200, class_weight=None, coef0=0.0,
+  decision_function_shape=None, degree=3, gamma='auto', kernel='rbf',
+  max_iter=-1, probability=True, random_state=None, shrinking=True,
+  tol=0.001, verbose=False)   
+-----------------
+
+('Accuracy score', 0.90416666666666667)
+('auc', 0.86275295531957519)
+
+             precision    recall  f1-score   support
+
+          0       0.90      1.00      0.95       217
+          1       0.00      0.00      0.00        23
+
+avg / total       0.82      0.90      0.86       240
+
+
+-----------------
+------------
+CondensedNearestNeighbour(n_jobs=-1, n_seeds_S=51, random_state=None,
+             return_indices=False, size_ngh=3) 
+------------
+-------------
+DecisionTreeClassifier(class_weight=None, criterion='gini', max_depth=None,
+            max_features=None, max_leaf_nodes=None, min_samples_leaf=1,
+            min_samples_split=2, min_weight_fraction_leaf=0.0,
+            presort=False, random_state=None, splitter='best')   
+-----------------
+
+('Accuracy score', 0.86250000000000004)
+('auc', 0.74904828691644965)
+
+             precision    recall  f1-score   support
+
+          0       0.96      0.89      0.92       217
+          1       0.37      0.61      0.46        23
+
+avg / total       0.90      0.86      0.88       240
+
+
+-----------------
+------------
+CondensedNearestNeighbour(n_jobs=-1, n_seeds_S=51, random_state=None,
+             return_indices=False, size_ngh=3) 
+------------
+-------------
+RandomForestClassifier(bootstrap=True, class_weight=None, criterion='gini',
+            max_depth=None, max_features='auto', max_leaf_nodes=None,
+            min_samples_leaf=1, min_samples_split=2,
+            min_weight_fraction_leaf=0.0, n_estimators=10, n_jobs=1,
+            oob_score=False, random_state=None, verbose=0,
+            warm_start=False)   
+-----------------
+
+('Accuracy score', 0.94999999999999996)
+('auc', 0.78180725305549992)
+
+             precision    recall  f1-score   support
+
+          0       0.95      1.00      0.97       217
+          1       1.00      0.48      0.65        23
+
+avg / total       0.95      0.95      0.94       240
+
+
+-----------------
+------------
+CondensedNearestNeighbour(n_jobs=-1, n_seeds_S=51, random_state=None,
+             return_indices=False, size_ngh=3) 
+------------
+-------------
+KNeighborsClassifier(algorithm='auto', leaf_size=30, metric='minkowski',
+           metric_params=None, n_jobs=1, n_neighbors=5, p=2,
+           weights='uniform')   
+-----------------
+
+('Accuracy score', 0.90416666666666667)
+('auc', 0.78140653175716279)
+
+             precision    recall  f1-score   support
+
+          0       0.95      0.94      0.95       217
+          1       0.50      0.57      0.53        23
+
+avg / total       0.91      0.90      0.91       240
+
+
+-----------------
+------------
+OneSidedSelection(n_jobs=-1, n_seeds_S=51, random_state=None,
+         return_indices=False, size_ngh=51) 
+------------
+-------------
+LogisticRegression(C=1.0, class_weight=None, dual=False, fit_intercept=True,
+          intercept_scaling=1, max_iter=100, multi_class='ovr', n_jobs=1,
+          penalty='l2', random_state=None, solver='liblinear', tol=0.0001,
+          verbose=0, warm_start=False)   
+-----------------
+
+('Accuracy score', 0.9291666666666667)
+('auc', 0.8337006611901423)
+
+             precision    recall  f1-score   support
+
+          0       0.94      0.99      0.96       217
+          1       0.75      0.39      0.51        23
+
+avg / total       0.92      0.93      0.92       240
+
+
+-----------------
+------------
+OneSidedSelection(n_jobs=-1, n_seeds_S=51, random_state=None,
+         return_indices=False, size_ngh=51) 
+------------
+-------------
+SVC(C=1.0, cache_size=200, class_weight=None, coef0=0.0,
+  decision_function_shape=None, degree=3, gamma='auto', kernel='rbf',
+  max_iter=-1, probability=True, random_state=None, shrinking=True,
+  tol=0.001, verbose=False)   
+-----------------
+
+('Accuracy score', 0.90416666666666667)
+('auc', 0.82448407132839108)
+
+             precision    recall  f1-score   support
+
+          0       0.90      1.00      0.95       217
+          1       0.00      0.00      0.00        23
+
+avg / total       0.82      0.90      0.86       240
+
+
+-----------------
+------------
+OneSidedSelection(n_jobs=-1, n_seeds_S=51, random_state=None,
+         return_indices=False, size_ngh=51) 
+------------
+-------------
+DecisionTreeClassifier(class_weight=None, criterion='gini', max_depth=None,
+            max_features=None, max_leaf_nodes=None, min_samples_leaf=1,
+            min_samples_split=2, min_weight_fraction_leaf=0.0,
+            presort=False, random_state=None, splitter='best')   
+-----------------
+
+('Accuracy score', 0.89166666666666672)
+('auc', 0.70687237026647964)
+
+             precision    recall  f1-score   support
+
+          0       0.94      0.94      0.94       217
+          1       0.44      0.48      0.46        23
+
+avg / total       0.90      0.89      0.89       240
+
+
+-----------------
+------------
+OneSidedSelection(n_jobs=-1, n_seeds_S=51, random_state=None,
+         return_indices=False, size_ngh=51) 
+------------
+-------------
+RandomForestClassifier(bootstrap=True, class_weight=None, criterion='gini',
+            max_depth=None, max_features='auto', max_leaf_nodes=None,
+            min_samples_leaf=1, min_samples_split=2,
+            min_weight_fraction_leaf=0.0, n_estimators=10, n_jobs=1,
+            oob_score=False, random_state=None, verbose=0,
+            warm_start=False)   
+-----------------
+
+('Accuracy score', 0.92083333333333328)
+('auc', 0.82207974353836899)
+
+             precision    recall  f1-score   support
+
+          0       0.93      0.99      0.96       217
+          1       0.70      0.30      0.42        23
+
+avg / total       0.91      0.92      0.91       240
+
+
+-----------------
+------------
+OneSidedSelection(n_jobs=-1, n_seeds_S=51, random_state=None,
+         return_indices=False, size_ngh=51) 
+------------
+-------------
+KNeighborsClassifier(algorithm='auto', leaf_size=30, metric='minkowski',
+           metric_params=None, n_jobs=1, n_neighbors=5, p=2,
+           weights='uniform')   
+-----------------
+
+('Accuracy score', 0.85833333333333328)
+('auc', 0.68182728912041668)
+
+             precision    recall  f1-score   support
+
+          0       0.93      0.92      0.92       217
+          1       0.28      0.30      0.29        23
+
+avg / total       0.86      0.86      0.86       240
+
+
+-----------------
+------------
+InstanceHardnessThreshold(cv=5, estimator='linear-svm', n_jobs=-1,
+             random_state=None, ratio='auto', return_indices=False) 
+------------
+-------------
+LogisticRegression(C=1.0, class_weight=None, dual=False, fit_intercept=True,
+          intercept_scaling=1, max_iter=100, multi_class='ovr', n_jobs=1,
+          penalty='l2', random_state=None, solver='liblinear', tol=0.0001,
+          verbose=0, warm_start=False)   
+-----------------
+
+('Accuracy score', 0.50416666666666665)
+('auc', 0.91925465838509313)
+
+             precision    recall  f1-score   support
+
+          0       0.99      0.46      0.62       217
+          1       0.16      0.96      0.27        23
+
+avg / total       0.91      0.50      0.59       240
+
+
+-----------------
+------------
+InstanceHardnessThreshold(cv=5, estimator='linear-svm', n_jobs=-1,
+             random_state=None, ratio='auto', return_indices=False) 
+------------
+-------------
+SVC(C=1.0, cache_size=200, class_weight=None, coef0=0.0,
+  decision_function_shape=None, degree=3, gamma='auto', kernel='rbf',
+  max_iter=-1, probability=True, random_state=None, shrinking=True,
+  tol=0.001, verbose=False)   
+-----------------
+
+('Accuracy score', 0.18333333333333332)
+('auc', 0.89981967541574837)
+
+             precision    recall  f1-score   support
+
+          0       1.00      0.10      0.18       217
+          1       0.11      1.00      0.19        23
+
+avg / total       0.91      0.18      0.18       240
+
+
+-----------------
+------------
+InstanceHardnessThreshold(cv=5, estimator='linear-svm', n_jobs=-1,
+             random_state=None, ratio='auto', return_indices=False) 
+------------
+-------------
+DecisionTreeClassifier(class_weight=None, criterion='gini', max_depth=None,
+            max_features=None, max_leaf_nodes=None, min_samples_leaf=1,
+            min_samples_split=2, min_weight_fraction_leaf=0.0,
+            presort=False, random_state=None, splitter='best')   
+-----------------
+
+('Accuracy score', 0.41249999999999998)
+('auc', 0.63624524143458228)
+
+             precision    recall  f1-score   support
+
+          0       0.97      0.36      0.53       217
+          1       0.13      0.91      0.23        23
+
+avg / total       0.89      0.41      0.50       240
+
+
+-----------------
+------------
+InstanceHardnessThreshold(cv=5, estimator='linear-svm', n_jobs=-1,
+             random_state=None, ratio='auto', return_indices=False) 
+------------
+-------------
+RandomForestClassifier(bootstrap=True, class_weight=None, criterion='gini',
+            max_depth=None, max_features='auto', max_leaf_nodes=None,
+            min_samples_leaf=1, min_samples_split=2,
+            min_weight_fraction_leaf=0.0, n_estimators=10, n_jobs=1,
+            oob_score=False, random_state=None, verbose=0,
+            warm_start=False)   
+-----------------
+
+('Accuracy score', 0.52916666666666667)
+('auc', 0.84171508715688237)
+
+             precision    recall  f1-score   support
+
+          0       1.00      0.48      0.65       217
+          1       0.17      1.00      0.29        23
+
+avg / total       0.92      0.53      0.61       240
+
+
+-----------------
+------------
+InstanceHardnessThreshold(cv=5, estimator='linear-svm', n_jobs=-1,
+             random_state=None, ratio='auto', return_indices=False) 
+------------
+-------------
+KNeighborsClassifier(algorithm='auto', leaf_size=30, metric='minkowski',
+           metric_params=None, n_jobs=1, n_neighbors=5, p=2,
+           weights='uniform')   
+-----------------
+
+('Accuracy score', 0.13333333333333333)
+('auc', 0.68122620717291127)
+
+             precision    recall  f1-score   support
+
+          0       1.00      0.04      0.08       217
+          1       0.10      1.00      0.18        23
+
+avg / total       0.91      0.13      0.09       240
+
+
+-----------------
+------------
+RandomOverSampler(random_state=None, ratio='auto') 
+------------
+-------------
+LogisticRegression(C=1.0, class_weight=None, dual=False, fit_intercept=True,
+          intercept_scaling=1, max_iter=100, multi_class='ovr', n_jobs=1,
+          penalty='l2', random_state=None, solver='liblinear', tol=0.0001,
+          verbose=0, warm_start=False)   
+-----------------
+
+('Accuracy score', 0.94999999999999996)
+('auc', 0.89741534762572628)
+
+             precision    recall  f1-score   support
+
+          0       0.95      1.00      0.97       217
+          1       0.92      0.52      0.67        23
+
+avg / total       0.95      0.95      0.94       240
+
+
+-----------------
+------------
+RandomOverSampler(random_state=None, ratio='auto') 
+------------
+-------------
+SVC(C=1.0, cache_size=200, class_weight=None, coef0=0.0,
+  decision_function_shape=None, degree=3, gamma='auto', kernel='rbf',
+  max_iter=-1, probability=True, random_state=None, shrinking=True,
+  tol=0.001, verbose=False)   
+-----------------
+
+('Accuracy score', 0.95416666666666672)
+('auc', 0.89721498697655777)
+
+             precision    recall  f1-score   support
+
+          0       0.96      1.00      0.98       217
+          1       0.93      0.57      0.70        23
+
+avg / total       0.95      0.95      0.95       240
+
+
+-----------------
+------------
+RandomOverSampler(random_state=None, ratio='auto') 
+------------
+-------------
+DecisionTreeClassifier(class_weight=None, criterion='gini', max_depth=None,
+            max_features=None, max_leaf_nodes=None, min_samples_leaf=1,
+            min_samples_split=2, min_weight_fraction_leaf=0.0,
+            presort=False, random_state=None, splitter='best')   
+-----------------
+
+('Accuracy score', 0.90416666666666667)
+('auc', 0.77208976157082754)
+
+             precision    recall  f1-score   support
+
+          0       0.96      0.94      0.95       217
+          1       0.50      0.61      0.55        23
+
+avg / total       0.91      0.90      0.91       240
+
+
+-----------------
+------------
+RandomOverSampler(random_state=None, ratio='auto') 
+------------
+-------------
+RandomForestClassifier(bootstrap=True, class_weight=None, criterion='gini',
+            max_depth=None, max_features='auto', max_leaf_nodes=None,
+            min_samples_leaf=1, min_samples_split=2,
+            min_weight_fraction_leaf=0.0, n_estimators=10, n_jobs=1,
+            oob_score=False, random_state=None, verbose=0,
+            warm_start=False)   
+-----------------
+
+('Accuracy score', 0.9458333333333333)
+('auc', 0.87497495491885391)
+
+             precision    recall  f1-score   support
+
+          0       0.96      0.99      0.97       217
+          1       0.81      0.57      0.67        23
+
+avg / total       0.94      0.95      0.94       240
+
+
+-----------------
+------------
+RandomOverSampler(random_state=None, ratio='auto') 
+------------
+-------------
+KNeighborsClassifier(algorithm='auto', leaf_size=30, metric='minkowski',
+           metric_params=None, n_jobs=1, n_neighbors=5, p=2,
+           weights='uniform')   
+-----------------
+
+('Accuracy score', 0.39166666666666666)
+('auc', 0.62232017631737124)
+
+             precision    recall  f1-score   support
+
+          0       0.95      0.35      0.51       217
+          1       0.12      0.83      0.21        23
+
+avg / total       0.87      0.39      0.48       240
+
+
+-----------------
+------------
+SMOTE(k=5, kind='regular', m=10, n_jobs=-1, out_step=0.5, random_state=None,
+   ratio='auto') 
+------------
+-------------
+LogisticRegression(C=1.0, class_weight=None, dual=False, fit_intercept=True,
+          intercept_scaling=1, max_iter=100, multi_class='ovr', n_jobs=1,
+          penalty='l2', random_state=None, solver='liblinear', tol=0.0001,
+          verbose=0, warm_start=False)   
+-----------------
+
+('Accuracy score', 0.94166666666666665)
+('auc', 0.88399118413143651)
+
+             precision    recall  f1-score   support
+
+          0       0.94      1.00      0.97       217
+          1       0.91      0.43      0.59        23
+
+avg / total       0.94      0.94      0.93       240
+
+
+-----------------
+------------
+SMOTE(k=5, kind='regular', m=10, n_jobs=-1, out_step=0.5, random_state=None,
+   ratio='auto') 
+------------
+-------------
+SVC(C=1.0, cache_size=200, class_weight=None, coef0=0.0,
+  decision_function_shape=None, degree=3, gamma='auto', kernel='rbf',
+  max_iter=-1, probability=True, random_state=None, shrinking=True,
+  tol=0.001, verbose=False)   
+-----------------
+
+('Accuracy score', 0.92500000000000004)
+('auc', 0.89160488879983979)
+
+             precision    recall  f1-score   support
+
+          0       0.93      0.99      0.96       217
+          1       0.78      0.30      0.44        23
+
+avg / total       0.92      0.93      0.91       240
+
+
+-----------------
+------------
+SMOTE(k=5, kind='regular', m=10, n_jobs=-1, out_step=0.5, random_state=None,
+   ratio='auto') 
+------------
+-------------
+DecisionTreeClassifier(class_weight=None, criterion='gini', max_depth=None,
+            max_features=None, max_leaf_nodes=None, min_samples_leaf=1,
+            min_samples_split=2, min_weight_fraction_leaf=0.0,
+            presort=False, random_state=None, splitter='best')   
+-----------------
+
+('Accuracy score', 0.90000000000000002)
+('auc', 0.75035063113604483)
+
+             precision    recall  f1-score   support
+
+          0       0.95      0.94      0.94       217
+          1       0.48      0.57      0.52        23
+
+avg / total       0.91      0.90      0.90       240
+
+
+-----------------
+------------
+SMOTE(k=5, kind='regular', m=10, n_jobs=-1, out_step=0.5, random_state=None,
+   ratio='auto') 
+------------
+-------------
+RandomForestClassifier(bootstrap=True, class_weight=None, criterion='gini',
+            max_depth=None, max_features='auto', max_leaf_nodes=None,
+            min_samples_leaf=1, min_samples_split=2,
+            min_weight_fraction_leaf=0.0, n_estimators=10, n_jobs=1,
+            oob_score=False, random_state=None, verbose=0,
+            warm_start=False)   
+-----------------
+
+('Accuracy score', 0.92500000000000004)
+('auc', 0.76838308956121026)
+
+             precision    recall  f1-score   support
+
+          0       0.93      0.99      0.96       217
+          1       0.78      0.30      0.44        23
+
+avg / total       0.92      0.93      0.91       240
+
+
+-----------------
+------------
+SMOTE(k=5, kind='regular', m=10, n_jobs=-1, out_step=0.5, random_state=None,
+   ratio='auto') 
+------------
+-------------
+KNeighborsClassifier(algorithm='auto', leaf_size=30, metric='minkowski',
+           metric_params=None, n_jobs=1, n_neighbors=5, p=2,
+           weights='uniform')   
+-----------------
+
+('Accuracy score', 0.09583333333333334)
+('auc', 0.50230414746543772)
+
+             precision    recall  f1-score   support
+
+          0       0.00      0.00      0.00       217
+          1       0.10      1.00      0.17        23
+
+avg / total       0.01      0.10      0.02       240
+
+
+-----------------
+------------
+SMOTE(k=5, kind='borderline1', m=10, n_jobs=-1, out_step=0.5,
+   random_state=None, ratio='auto') 
+------------
+-------------
+LogisticRegression(C=1.0, class_weight=None, dual=False, fit_intercept=True,
+          intercept_scaling=1, max_iter=100, multi_class='ovr', n_jobs=1,
+          penalty='l2', random_state=None, solver='liblinear', tol=0.0001,
+          verbose=0, warm_start=False)   
+-----------------
+
+('Accuracy score', 0.94999999999999996)
+('auc', 0.93207773993187737)
+
+             precision    recall  f1-score   support
+
+          0       0.96      0.98      0.97       217
+          1       0.79      0.65      0.71        23
+
+avg / total       0.95      0.95      0.95       240
+
+
+-----------------
+------------
+SMOTE(k=5, kind='borderline1', m=10, n_jobs=-1, out_step=0.5,
+   random_state=None, ratio='auto') 
+------------
+-------------
+SVC(C=1.0, cache_size=200, class_weight=None, coef0=0.0,
+  decision_function_shape=None, degree=3, gamma='auto', kernel='rbf',
+  max_iter=-1, probability=True, random_state=None, shrinking=True,
+  tol=0.001, verbose=False)   
+-----------------
+
+('Accuracy score', 0.9458333333333333)
+('auc', 0.93648567421358442)
+
+             precision    recall  f1-score   support
+
+          0       0.96      0.99      0.97       217
+          1       0.81      0.57      0.67        23
+
+avg / total       0.94      0.95      0.94       240
+
+
+-----------------
+------------
+SMOTE(k=5, kind='borderline1', m=10, n_jobs=-1, out_step=0.5,
+   random_state=None, ratio='auto') 
+------------
+-------------
+DecisionTreeClassifier(class_weight=None, criterion='gini', max_depth=None,
+            max_features=None, max_leaf_nodes=None, min_samples_leaf=1,
+            min_samples_split=2, min_weight_fraction_leaf=0.0,
+            presort=False, random_state=None, splitter='best')   
+-----------------
+
+('Accuracy score', 0.8833333333333333)
+('auc', 0.83830895612101786)
+
+             precision    recall  f1-score   support
+
+          0       0.97      0.89      0.93       217
+          1       0.44      0.78      0.56        23
+
+avg / total       0.92      0.88      0.90       240
+
+
+-----------------
+------------
+SMOTE(k=5, kind='borderline1', m=10, n_jobs=-1, out_step=0.5,
+   random_state=None, ratio='auto') 
+------------
+-------------
+RandomForestClassifier(bootstrap=True, class_weight=None, criterion='gini',
+            max_depth=None, max_features='auto', max_leaf_nodes=None,
+            min_samples_leaf=1, min_samples_split=2,
+            min_weight_fraction_leaf=0.0, n_estimators=10, n_jobs=1,
+            oob_score=False, random_state=None, verbose=0,
+            warm_start=False)   
+-----------------
+
+('Accuracy score', 0.94166666666666665)
+('auc', 0.86385493889000198)
+
+             precision    recall  f1-score   support
+
+          0       0.96      0.98      0.97       217
+          1       0.76      0.57      0.65        23
+
+avg / total       0.94      0.94      0.94       240
+
+
+-----------------
+------------
+SMOTE(k=5, kind='borderline1', m=10, n_jobs=-1, out_step=0.5,
+   random_state=None, ratio='auto') 
+------------
+-------------
+KNeighborsClassifier(algorithm='auto', leaf_size=30, metric='minkowski',
+           metric_params=None, n_jobs=1, n_neighbors=5, p=2,
+           weights='uniform')   
+-----------------
+
+('Accuracy score', 0.09583333333333334)
+('auc', 0.5)
+
+             precision    recall  f1-score   support
+
+          0       0.00      0.00      0.00       217
+          1       0.10      1.00      0.17        23
+
+avg / total       0.01      0.10      0.02       240
+
+
+-----------------
+------------
+SMOTE(k=5, kind='borderline2', m=10, n_jobs=-1, out_step=0.5,
+   random_state=None, ratio='auto') 
+------------
+-------------
+LogisticRegression(C=1.0, class_weight=None, dual=False, fit_intercept=True,
+          intercept_scaling=1, max_iter=100, multi_class='ovr', n_jobs=1,
+          penalty='l2', random_state=None, solver='liblinear', tol=0.0001,
+          verbose=0, warm_start=False)   
+-----------------
+
+('Accuracy score', 0.93333333333333335)
+('auc', 0.877379282708876)
+
+             precision    recall  f1-score   support
+
+          0       0.94      0.99      0.96       217
+          1       0.82      0.39      0.53        23
+
+avg / total       0.93      0.93      0.92       240
+
+
+-----------------
+------------
+SMOTE(k=5, kind='borderline2', m=10, n_jobs=-1, out_step=0.5,
+   random_state=None, ratio='auto') 
+------------
+-------------
+SVC(C=1.0, cache_size=200, class_weight=None, coef0=0.0,
+  decision_function_shape=None, degree=3, gamma='auto', kernel='rbf',
+  max_iter=-1, probability=True, random_state=None, shrinking=True,
+  tol=0.001, verbose=False)   
+-----------------
+
+('Accuracy score', 0.93333333333333335)
+('auc', 0.89360849529152464)
+
+             precision    recall  f1-score   support
+
+          0       0.94      0.99      0.96       217
+          1       0.82      0.39      0.53        23
+
+avg / total       0.93      0.93      0.92       240
+
+
+-----------------
+------------
+SMOTE(k=5, kind='borderline2', m=10, n_jobs=-1, out_step=0.5,
+   random_state=None, ratio='auto') 
+------------
+-------------
+DecisionTreeClassifier(class_weight=None, criterion='gini', max_depth=None,
+            max_features=None, max_leaf_nodes=None, min_samples_leaf=1,
+            min_samples_split=2, min_weight_fraction_leaf=0.0,
+            presort=False, random_state=None, splitter='best')   
+-----------------
+
+('Accuracy score', 0.91666666666666663)
+('auc', 0.70126227208976155)
+
+             precision    recall  f1-score   support
+
+          0       0.94      0.97      0.95       217
+          1       0.59      0.43      0.50        23
+
+avg / total       0.91      0.92      0.91       240
+
+
+-----------------
+------------
+SMOTE(k=5, kind='borderline2', m=10, n_jobs=-1, out_step=0.5,
+   random_state=None, ratio='auto') 
+------------
+-------------
+RandomForestClassifier(bootstrap=True, class_weight=None, criterion='gini',
+            max_depth=None, max_features='auto', max_leaf_nodes=None,
+            min_samples_leaf=1, min_samples_split=2,
+            min_weight_fraction_leaf=0.0, n_estimators=10, n_jobs=1,
+            oob_score=False, random_state=None, verbose=0,
+            warm_start=False)   
+-----------------
+
+('Accuracy score', 0.9375)
+('auc', 0.87948306952514521)
+
+             precision    recall  f1-score   support
+
+          0       0.94      1.00      0.97       217
+          1       0.90      0.39      0.55        23
+
+avg / total       0.94      0.94      0.93       240
+
+
+-----------------
+------------
+SMOTE(k=5, kind='borderline2', m=10, n_jobs=-1, out_step=0.5,
+   random_state=None, ratio='auto') 
+------------
+-------------
+KNeighborsClassifier(algorithm='auto', leaf_size=30, metric='minkowski',
+           metric_params=None, n_jobs=1, n_neighbors=5, p=2,
+           weights='uniform')   
+-----------------
+
+('Accuracy score', 0.09583333333333334)
+('auc', 0.5)
+
+             precision    recall  f1-score   support
+
+          0       0.00      0.00      0.00       217
+          1       0.10      1.00      0.17        23
+
+avg / total       0.01      0.10      0.02       240
+
+
+-----------------
+------------
+SMOTETomek(k=5, kind_smote='regular', m=10, n_jobs=-1, out_step=0.5,
+      random_state=None, ratio='auto') 
+------------
+-------------
+LogisticRegression(C=1.0, class_weight=None, dual=False, fit_intercept=True,
+          intercept_scaling=1, max_iter=100, multi_class='ovr', n_jobs=1,
+          penalty='l2', random_state=None, solver='liblinear', tol=0.0001,
+          verbose=0, warm_start=False)   
+-----------------
+
+('Accuracy score', 0.94166666666666665)
+('auc', 0.86956521739130443)
+
+             precision    recall  f1-score   support
+
+          0       0.95      0.99      0.97       217
+          1       0.85      0.48      0.61        23
+
+avg / total       0.94      0.94      0.93       240
+
+
+-----------------
+------------
+SMOTETomek(k=5, kind_smote='regular', m=10, n_jobs=-1, out_step=0.5,
+      random_state=None, ratio='auto') 
+------------
+-------------
+SVC(C=1.0, cache_size=200, class_weight=None, coef0=0.0,
+  decision_function_shape=None, degree=3, gamma='auto', kernel='rbf',
+  max_iter=-1, probability=True, random_state=None, shrinking=True,
+  tol=0.001, verbose=False)   
+-----------------
+
+('Accuracy score', 0.94166666666666665)
+('auc', 0.86796233219795638)
+
+             precision    recall  f1-score   support
+
+          0       0.95      0.99      0.97       217
+          1       0.85      0.48      0.61        23
+
+avg / total       0.94      0.94      0.93       240
+
+
+-----------------
+------------
+SMOTETomek(k=5, kind_smote='regular', m=10, n_jobs=-1, out_step=0.5,
+      random_state=None, ratio='auto') 
+------------
+-------------
+DecisionTreeClassifier(class_weight=None, criterion='gini', max_depth=None,
+            max_features=None, max_leaf_nodes=None, min_samples_leaf=1,
+            min_samples_split=2, min_weight_fraction_leaf=0.0,
+            presort=False, random_state=None, splitter='best')   
+-----------------
+
+('Accuracy score', 0.88749999999999996)
+('auc', 0.76287317170907643)
+
+             precision    recall  f1-score   support
+
+          0       0.96      0.92      0.94       217
+          1       0.44      0.61      0.51        23
+
+avg / total       0.91      0.89      0.90       240
+
+
+-----------------
+------------
+SMOTETomek(k=5, kind_smote='regular', m=10, n_jobs=-1, out_step=0.5,
+      random_state=None, ratio='auto') 
+------------
+-------------
+RandomForestClassifier(bootstrap=True, class_weight=None, criterion='gini',
+            max_depth=None, max_features='auto', max_leaf_nodes=None,
+            min_samples_leaf=1, min_samples_split=2,
+            min_weight_fraction_leaf=0.0, n_estimators=10, n_jobs=1,
+            oob_score=False, random_state=None, verbose=0,
+            warm_start=False)   
+-----------------
+
+('Accuracy score', 0.9375)
+('auc', 0.89420957723903027)
+
+             precision    recall  f1-score   support
+
+          0       0.95      0.98      0.97       217
+          1       0.75      0.52      0.62        23
+
+avg / total       0.93      0.94      0.93       240
+
+
+-----------------
+------------
+SMOTETomek(k=5, kind_smote='regular', m=10, n_jobs=-1, out_step=0.5,
+      random_state=None, ratio='auto') 
+------------
+-------------
+KNeighborsClassifier(algorithm='auto', leaf_size=30, metric='minkowski',
+           metric_params=None, n_jobs=1, n_neighbors=5, p=2,
+           weights='uniform')   
+-----------------
+
+('Accuracy score', 0.09583333333333334)
+('auc', 0.5)
+
+             precision    recall  f1-score   support
+
+          0       0.00      0.00      0.00       217
+          1       0.10      1.00      0.17        23
+
+avg / total       0.01      0.10      0.02       240
+
+
+-----------------
+------------
+SMOTEENN(k=5, kind_enn='all', kind_smote='regular', m=10, n_jobs=-1,
+     out_step=0.5, random_state=None, ratio='auto', size_ngh=3) 
+------------
+-------------
+LogisticRegression(C=1.0, class_weight=None, dual=False, fit_intercept=True,
+          intercept_scaling=1, max_iter=100, multi_class='ovr', n_jobs=1,
+          penalty='l2', random_state=None, solver='liblinear', tol=0.0001,
+          verbose=0, warm_start=False)   
+-----------------
+
+('Accuracy score', 0.94166666666666665)
+('auc', 0.90863554397916246)
+
+             precision    recall  f1-score   support
+
+          0       0.95      0.99      0.97       217
+          1       0.85      0.48      0.61        23
+
+avg / total       0.94      0.94      0.93       240
+
+
+-----------------
+------------
+SMOTEENN(k=5, kind_enn='all', kind_smote='regular', m=10, n_jobs=-1,
+     out_step=0.5, random_state=None, ratio='auto', size_ngh=3) 
+------------
+-------------
+SVC(C=1.0, cache_size=200, class_weight=None, coef0=0.0,
+  decision_function_shape=None, degree=3, gamma='auto', kernel='rbf',
+  max_iter=-1, probability=True, random_state=None, shrinking=True,
+  tol=0.001, verbose=False)   
+-----------------
+
+('Accuracy score', 0.9375)
+('auc', 0.90062111801242239)
+
+             precision    recall  f1-score   support
+
+          0       0.94      0.99      0.97       217
+          1       0.83      0.43      0.57        23
+
+avg / total       0.93      0.94      0.93       240
+
+
+-----------------
+------------
+SMOTEENN(k=5, kind_enn='all', kind_smote='regular', m=10, n_jobs=-1,
+     out_step=0.5, random_state=None, ratio='auto', size_ngh=3) 
+------------
+-------------
+DecisionTreeClassifier(class_weight=None, criterion='gini', max_depth=None,
+            max_features=None, max_leaf_nodes=None, min_samples_leaf=1,
+            min_samples_split=2, min_weight_fraction_leaf=0.0,
+            presort=False, random_state=None, splitter='best')   
+-----------------
+
+('Accuracy score', 0.92083333333333328)
+('auc', 0.76187136846323378)
+
+             precision    recall  f1-score   support
+
+          0       0.95      0.96      0.96       217
+          1       0.59      0.57      0.58        23
+
+avg / total       0.92      0.92      0.92       240
+
+
+-----------------
+------------
+SMOTEENN(k=5, kind_enn='all', kind_smote='regular', m=10, n_jobs=-1,
+     out_step=0.5, random_state=None, ratio='auto', size_ngh=3) 
+------------
+-------------
+RandomForestClassifier(bootstrap=True, class_weight=None, criterion='gini',
+            max_depth=None, max_features='auto', max_leaf_nodes=None,
+            min_samples_leaf=1, min_samples_split=2,
+            min_weight_fraction_leaf=0.0, n_estimators=10, n_jobs=1,
+            oob_score=False, random_state=None, verbose=0,
+            warm_start=False)   
+-----------------
+
+('Accuracy score', 0.9375)
+('auc', 0.86836305349629328)
+
+             precision    recall  f1-score   support
+
+          0       0.95      0.99      0.97       217
+          1       0.79      0.48      0.59        23
+
+avg / total       0.93      0.94      0.93       240
+
+
+-----------------
+------------
+SMOTEENN(k=5, kind_enn='all', kind_smote='regular', m=10, n_jobs=-1,
+     out_step=0.5, random_state=None, ratio='auto', size_ngh=3) 
+------------
+-------------
+KNeighborsClassifier(algorithm='auto', leaf_size=30, metric='minkowski',
+           metric_params=None, n_jobs=1, n_neighbors=5, p=2,
+           weights='uniform')   
+-----------------
+
+('Accuracy score', 0.09583333333333334)
+('auc', 0.5)
+
+             precision    recall  f1-score   support
+
+          0       0.00      0.00      0.00       217
+          1       0.10      1.00      0.17        23
+
+avg / total       0.01      0.10      0.02       240
+
+
+-----------------
