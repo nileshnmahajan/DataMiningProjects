@@ -36,8 +36,8 @@ print "No of features: ", len(idx)
 
 print "Time taken to fit VarianceThreshold: ", (time() - start)
 
-df_reduced_train = pd.DataFrame(np.nan, index=range(800), columns=idx)
-df_reduced_test = pd.DataFrame(np.nan, index=range(350), columns=idx)
+df_reduced_train = pd.DataFrame(np.nan, index=range(X_train.shape[0]), columns=idx)
+df_reduced_test = pd.DataFrame(np.nan, index=range(X_test.shape[0]), columns=idx)
 
 
 def get_value_featurespace(row, column, test_train):
@@ -55,13 +55,13 @@ def populate_df_reduced(row, col, test_train):
 
 
 def create_new_featurespace():
-    for i in range(800):
+    for i in range(X_train.shape[0]):
         for j in idx:
             populate_df_reduced(i, j, "train")
-    for i in range(350):
+    for i in range(X_test.shape[0]):
         for j in idx:
             populate_df_reduced(i, j, "test")
 
 
-#Building the new, reduced featurespace
+# Building the new, reduced featurespace
 create_new_featurespace()

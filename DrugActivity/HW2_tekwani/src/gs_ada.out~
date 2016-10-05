@@ -1,0 +1,29 @@
+No of features:  2115
+Time taken to fit VarianceThreshold:  0.0001540184021
+Grid scores: --------
+[mean: 0.25384, std: 0.03877, params: {'n_estimators': 50, 'base_estimator__criterion': 'gini', 'base_estimator__splitter': 'best'}, mean: 0.35887, std: 0.03205, params: {'n_estimators': 100, 'base_estimator__criterion': 'gini', 'base_estimator__splitter': 'best'}, mean: 0.35879, std: 0.08358, params: {'n_estimators': 500, 'base_estimator__criterion': 'gini', 'base_estimator__splitter': 'best'}, mean: 0.40272, std: 0.08555, params: {'n_estimators': 1000, 'base_estimator__criterion': 'gini', 'base_estimator__splitter': 'best'}, mean: 0.31007, std: 0.08024, params: {'n_estimators': 2500, 'base_estimator__criterion': 'gini', 'base_estimator__splitter': 'best'}, mean: 0.35226, std: 0.02481, params: {'n_estimators': 50, 'base_estimator__criterion': 'gini', 'base_estimator__splitter': 'random'}, mean: 0.39785, std: 0.07595, params: {'n_estimators': 100, 'base_estimator__criterion': 'gini', 'base_estimator__splitter': 'random'}, mean: 0.29319, std: 0.04039, params: {'n_estimators': 500, 'base_estimator__criterion': 'gini', 'base_estimator__splitter': 'random'}, mean: 0.34697, std: 0.02353, params: {'n_estimators': 1000, 'base_estimator__criterion': 'gini', 'base_estimator__splitter': 'random'}, mean: 0.32997, std: 0.12648, params: {'n_estimators': 2500, 'base_estimator__criterion': 'gini', 'base_estimator__splitter': 'random'}, mean: 0.38379, std: 0.04853, params: {'n_estimators': 50, 'base_estimator__criterion': 'entropy', 'base_estimator__splitter': 'best'}, mean: 0.36106, std: 0.10824, params: {'n_estimators': 100, 'base_estimator__criterion': 'entropy', 'base_estimator__splitter': 'best'}, mean: 0.39467, std: 0.04385, params: {'n_estimators': 500, 'base_estimator__criterion': 'entropy', 'base_estimator__splitter': 'best'}, mean: 0.36464, std: 0.06474, params: {'n_estimators': 1000, 'base_estimator__criterion': 'entropy', 'base_estimator__splitter': 'best'}, mean: 0.22242, std: 0.05077, params: {'n_estimators': 2500, 'base_estimator__criterion': 'entropy', 'base_estimator__splitter': 'best'}, mean: 0.34732, std: 0.06867, params: {'n_estimators': 50, 'base_estimator__criterion': 'entropy', 'base_estimator__splitter': 'random'}, mean: 0.29582, std: 0.04603, params: {'n_estimators': 100, 'base_estimator__criterion': 'entropy', 'base_estimator__splitter': 'random'}, mean: 0.45541, std: 0.02449, params: {'n_estimators': 500, 'base_estimator__criterion': 'entropy', 'base_estimator__splitter': 'random'}, mean: 0.37449, std: 0.10975, params: {'n_estimators': 1000, 'base_estimator__criterion': 'entropy', 'base_estimator__splitter': 'random'}, mean: 0.34343, std: 0.03102, params: {'n_estimators': 2500, 'base_estimator__criterion': 'entropy', 'base_estimator__splitter': 'random'}]
+Best estimator----
+AdaBoostClassifier(algorithm='SAMME',
+          base_estimator=DecisionTreeClassifier(class_weight='balanced', criterion='entropy',
+            max_depth=None, max_features='auto', max_leaf_nodes=None,
+            min_samples_leaf=1, min_samples_split=2,
+            min_weight_fraction_leaf=0.0, presort=False, random_state=None,
+            splitter='random'),
+          learning_rate=1.0, n_estimators=500, random_state=None)
+Best params ----
+{'n_estimators': 500, 'base_estimator__criterion': 'entropy', 'base_estimator__splitter': 'random'}
+Best score:  0.455408306925
+Finished in:  1.02900099754
+Classification report: 
+             precision    recall  f1-score   support
+
+          0       0.94      0.94      0.94       144
+          1       0.44      0.47      0.45        15
+
+avg / total       0.90      0.89      0.89       159
+
+Predicting on full test set of 350 drugs:
+Traceback (most recent call last):
+  File "gridsearch_adaboost.py", line 59, in <module>
+    parameters_ab2 = np.array(gs.best_params_items())
+AttributeError: 'GridSearchCV' object has no attribute 'best_params_items'

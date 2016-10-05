@@ -31,16 +31,7 @@ print "Best params ----"
 print grid_tree.best_params_
 print "Best score: ", grid_tree.best_score_
 
-print "Feature importances: "
-print grid_tree.feature_importances_
-
-
-# tree_preds = grid_tree.predict_proba(X_test)[:, 1]
-#
-# tree_performance = roc_auc_score()
-#
-# print 'DecisionTree: Area under the ROC curve = {}'.format(tree_performance)
-
 print "Finished in: ", (time() - dt_start)
+
 
 

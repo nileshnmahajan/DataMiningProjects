@@ -1,0 +1,17 @@
+No of features:  2115
+Time taken to fit VarianceThreshold:  0.354007005692
+No of folds in Stratified K-Fold 5
+Classified test set drugs in :  718.467705011
+Precision:  0.8
+Recall:  0.533333333333
+F1 score:  0.64
+Classification report
+-------------------------------
+             precision    recall  f1-score   support
+
+   Inactive       0.95      0.99      0.97       144
+     Active       0.80      0.53      0.64        15
+
+avg / total       0.94      0.94      0.94       159
+
+('auc', 0.86550925925925926)

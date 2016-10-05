@@ -1,14 +1,13 @@
 import numpy as np
 from time import time
-from scipy.sparse import csr_matrix
 from feature_creation import X_train, y_train, idx, featurespace_dense_X_train
-from collections import Counter
 import pandas as pd
 from sklearn.linear_model import SGDClassifier
 from numpy import savetxt
 from sklearn.metrics import accuracy_score, classification_report, f1_score, precision_score, recall_score, roc_auc_score
+from sklearn.metrics import roc_curve, auc
 from sklearn.cross_validation import StratifiedKFold
-
+import matplotlib.pyplot as plt
 
 start = time()
 
@@ -34,11 +33,9 @@ def create_new_featurespace():
 # Building the new test and train feature spaces
 create_new_featurespace()
 
-print "New shape of train set", df_reduced_train.shape
-print "New train set: ", df_reduced_train
-
-
 skf = StratifiedKFold(y_train, n_folds=5, shuffle=True)
+
+print "No of folds in Stratified K-Fold", skf.n_folds
 
 for train_index, test_index in skf:
     # print ("TRAIN:", train_index, "TEST:", test_index)
@@ -46,20 +43,13 @@ for train_index, test_index in skf:
     X_test, y_test = df_reduced_train.iloc[test_index], y_train[test_index]
 
 
-
-# print "Training set", X_train, y_train
-# print "Test set", X_test, y_test
-
 clf = SGDClassifier(n_iter=10000, alpha=0.07, loss='modified_huber', penalty='elasticnet', shuffle=True)
 clf.fit(X_train, y_true)
 
 
 Z = clf.predict(X_test)
-# print Z
 
-
-print "Classified 400 drugs in : ", (time() - start)
-# print "Accuracy: ",  accuracy_score(y_test, Z)
+print "Classified drugs from test set in : ", (time() - start)
 print "Precision: ", precision_score(y_test, Z)
 print "Recall: ", recall_score(y_test, Z)
 print "F1 score: " , f1_score(y_test, Z,  average='binary')
@@ -72,3 +62,26 @@ print classification_report(y_test, Z, target_names=['Inactive', 'Active'])
 
 
 print('auc', roc_auc_score(y_test, clf.predict_proba(X_test)[:, 1]))
+
+preds = clf.predict_proba(X_test)[:, 1]
+fpr, tpr, _ = roc_curve(y_test, preds)
+
+roc = pd.DataFrame(dict(fpr=fpr,tpr=tpr))
+roc_auc = auc(fpr, tpr)
+
+plt.title("Receiver Operating Characteristics")
+plt.plot(fpr, tpr, 'b', label='AUC = %0.2f' %roc_auc)
+plt.legend(loc='lower right')
+plt.plot([0,1], [0,1], 'r--')
+plt.xlim([0,1])
+plt.ylim([0,1])
+
+plt.show()
+
+
+
+
+
+
+
+

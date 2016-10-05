@@ -13,8 +13,13 @@ clf = SGDClassifier(n_iter=10000, loss='modified_huber', penalty='elasticnet', s
 
 clf.fit(df_reduced_train.values, y_train)
 print "Time to run 10000 iterations of SGDClassifier", (time() - clf_start)
+
 y_pred = clf.predict(df_reduced_test.values)
+
 print "Predicted values: ", y_pred
-savetxt('../predictions/sgd_predictions_16_vt_5.txt', y_pred, fmt='%i')
-print ("Finished classifying 350 drugs in: ", (time() - clf_start ))
+
+savetxt('../predictions/sgd_predictions.txt', y_pred, fmt='%i')
+
+print ("Finished classifying 350 drugs in: ", (time() - clf_start))
+
 
