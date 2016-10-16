@@ -1,0 +1,9 @@
+DictVectorizer gives the same output as TfIdfVectorizer.
+DictVectorizer output shape is (8580, 57940)
+
+
+Need to do:
+
+1) SSE vs K
+2) Try different distance metrics
+3) Bisecting KMeans

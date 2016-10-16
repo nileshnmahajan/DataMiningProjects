@@ -1,0 +1,48 @@
+separate = lambda x: pd.Series([i for i in x.split(' ')])
+train_data = train_data[0].apply(separate)
+print(train_data)
+
+A = np.loadtxt('../data/input.mat', skiprows=None, unpack = True)
+print(A)
+
+# converting every odd space to a tab
+
+def find_spaces(character, line):
+    space_pos = []
+    for i in range(len(line)):
+        if character == line[i] and i%2 != 0:
+            space_pos.append(i)
+    return space_pos
+
+
+with open('../data/input.txt') as f:
+    with open('../data/input_new.txt', 'w') as newf:
+        for line in f:
+            space_pos = find_spaces(' ', line)
+            print(space_pos)
+            for s in space_pos:
+                newline = line.replace(line[s], '\t')
+                newf.write(newline)
+
+
+
+
+
+# Using Scikit's kmeans
+
+model = KMeans(init='k-means++', n_clusters=7, n_init=10, max_iter=100)
+model.fit(X)
+
+
+print "Cluster centers: "
+print model.cluster_centers_
+
+
+print "Cluster labels: "
+print model.labels_
+print type(model.labels_)
+
+np.savetxt('../predictions/sklearn_kmns_1.txt', model.labels_, fmt='%i')
+
+print "Elapsed time in seconds: ", time() - start
+

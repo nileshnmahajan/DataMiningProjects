@@ -1,0 +1,7 @@
+1. Using KMeans_naive with euclidean distance gives me 147 entries and 0.48 on leaderboard
+2. Using KMeans_naive with cosine distance gives 147 entries and 0.60 on leaderboard (always subtract cosine similarity from 1)
+3. KMeans with Manhattan distance gives the worst results
+
+4. KMeans with PCA where components  = 5 is in file predictions/kmeans_pca_1.txt, gives 0.18 on leaderboard.
+5. KMeans with PCA where components  = 10 is in file predictions/kmeans_pca_2.txt, gives 0.34 on leaderboard
+6. KMeans with PCA where components = 20 is in file predictions/kmeans_pca_3.txt, gives 0.29 on leaderboard
