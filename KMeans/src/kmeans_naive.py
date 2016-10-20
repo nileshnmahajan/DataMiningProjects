@@ -89,6 +89,8 @@ def predict(seed=10):
         print ("Data missing. Please download the Iris dataset.")
         sys.exit(1)
     features = data.keys()
+    print features
+    print type(features)
     random.seed(seed)
     random.shuffle(features)
     clusters = kmeans(features, 3)

@@ -5,3 +5,6 @@
 4. KMeans with PCA where components  = 5 is in file predictions/kmeans_pca_1.txt, gives 0.18 on leaderboard.
 5. KMeans with PCA where components  = 10 is in file predictions/kmeans_pca_2.txt, gives 0.34 on leaderboard
 6. KMeans with PCA where components = 20 is in file predictions/kmeans_pca_3.txt, gives 0.29 on leaderboard
+7. KMeans with PCA where components = 2 is in file predictions/kmeans_pca_4.txt, gives 0.18 on leaderboard
+8. KMeans with SVD where components = 5 is in file predictions/kmeans_svd_5_norm.txt gives 0.34 on leaderboard
+9. KMeans with SVD where components = 10 is in file predictions/kmeans_svd_10_norm.txt gives
