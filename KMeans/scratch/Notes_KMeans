@@ -8,3 +8,42 @@
 7. KMeans with PCA where components = 2 is in file predictions/kmeans_pca_4.txt, gives 0.18 on leaderboard
 8. KMeans with SVD where components = 5 is in file predictions/kmeans_svd_5_norm.txt gives 0.34 on leaderboard
 9. KMeans with SVD where components = 10 is in file predictions/kmeans_svd_10_norm.txt gives
+
+
+
+
+Distribution of clusters - trial 1, iter=100
+Size : 1223
+Size : 300
+Size : 1736
+Size : 114
+Size : 3329
+Size : 437
+Size : 1417
+Total: 8556
+
+Trial 2, iter = 300
+Size : 3166
+Size : 1051
+Size : 1766
+Size : 1400
+Size : 428
+Size : 114
+Size : 631
+Total: 8556
+
+Trial 3, iter = 300
+Size : 1051
+Size : 3203
+Size : 486
+Size : 1767
+Size : 1225
+Size : 189
+Size : 635
+Total: 8556
+
+
+
+10/22 and 10/23
+
+

@@ -1,8 +1,10 @@
 from sklearn.feature_extraction.text import TfidfTransformer
 from sklearn.feature_extraction import DictVectorizer
-from sklearn.decomposition import TruncatedSVD
+from sklearn.decomposition import TruncatedSVD, PCA
+# from sklearn.cluster import KMeans
 from time import time
-import pickle
+import sys
+from sklearn.externals import joblib
 import random
 import numpy as np
 import pandas as pd
@@ -16,7 +18,6 @@ with open('../data/input.mat', 'r') as file:
         d = dict([(k, v) for k, v in zip(l[::2], l[1::2])])
         data.append(d)
 
-
 v = DictVectorizer(sparse=True, dtype=float)
 X = v.fit_transform(data)
 
@@ -26,37 +27,40 @@ start = time()
 tfidf = TfidfTransformer(norm='l2', use_idf=True)
 trans_X = tfidf.fit_transform(X)
 
+# svd = TruncatedSVD(n_components=10, algorithm='randomized')
+# reduced_X = svd.fit_transform(trans_X)
 
-svd = TruncatedSVD(n_components=10, algorithm='randomized')
-reduced_X = svd.fit_transform(trans_X)
+# pca = PCA(n_components=10)
+# pca.fit(trans_X.toarray())
 
-print "Type of reduced X:", type(reduced_X)
+# joblib.dump(pca, 'pca_10.pkl')
 
-print "Shape after dimensionality reduction:", reduced_X.shape
+pca = joblib.load('pca_10.pkl')
 
-# class KMeans():
-#     def set_clusters(self, trans_X):
-#         cluster_comp = []
-#         clusters = np.random.randint(0, trans_X.shape[0], 7)
-#         for c in clusters:
-#            cluster_comp.append(trans_X[c])
-#         print cluster_comp
-#         print type(cluster_comp[0])
+reduced_X = pca.fit_transform(trans_X.toarray())
 
+try:
+    X_arr = tuple(map(tuple, reduced_X))
 
-centroids = reduced_X[np.random.choice(reduced_X.shape[0], 7)]
-print "See if we got some centroids: "
-print centroids
+    reduced_featurespace = list(X_arr)
 
-print "Size of centroids selection", centroids.shape
+except:
+    sys.exit(1)
 
-print "Type of centroids", type(centroids)
-
-
-
-# if __name__ == '__main__':
-#     km = KMeans()
-#     km.set_clusters(trans_X)
-
+# print len(reduced_featurespace)
+# print reduced_featurespace
 
 print "Elapsed time: ", time() - start
+
+
+try:
+
+    # print svd.explained_variance_
+    # print svd.components_
+
+    print "Explained variance", pca.explained_variance_
+    print "Components", pca.components_
+
+except:
+    pass
+
