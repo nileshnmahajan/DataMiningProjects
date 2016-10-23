@@ -4,12 +4,14 @@
 from __future__ import division
 import sys
 from collections import defaultdict
-import random
 import operator
 import numpy as np
 import math
 from feature_selec import reduced_featurespace
 import pandas as pd
+from sklearn.metrics import silhouette_score
+
+submission_path= '../predictions/kmeans_3.txt'
 
 
 def load_data():
@@ -20,17 +22,17 @@ def load_data():
 def euc_distance(f1, f2):
     a = np.array
     d = a(f1)-a(f2)
-    return np.sqrt(np.dot(d, d))
+    return np.sqrt(dot(d, d))
 
 
-def dot_product(f1, f2):
-    return sum(map(operator.mul, f1, f2))
+def dot(v, w):
+    return sum(v_i * w_i for v_i, w_i in zip(v,w))
 
 
 def cosine(f1, f2):
-    prod = dot_product(f1, f2)
-    len1 = math.sqrt(dot_product(f1, f1))
-    len2 = math.sqrt(dot_product(f2, f2))
+    prod = dot(f1, f2)
+    len1 = math.sqrt(dot(f1, f2))
+    len2 = math.sqrt(dot(f1, f2))
     return prod / (len1 * len2)
 
 
@@ -38,13 +40,12 @@ def mean(feats):
     return tuple(np.mean(feats, axis=0))
 
 
-def assign(centroids):
+def assign_cluster(centroids):
     new_centroids = defaultdict(list)
     for cx in centroids:
         for x in centroids[cx]:
-            best = min(centroids, key=lambda c: 1-cosine(x, c))
-            # best = min(centroids, key=lambda c: euc_distance(x, c))
-            new_centroids[best] += [x]
+            lease_dist = min(centroids, key=lambda c: euc_distance(x, c))
+            new_centroids[lease_dist] += [x]
     return new_centroids
 
 
@@ -55,15 +56,14 @@ def update(centroids):
     return new_centroids
 
 
-def kmeans(features, k, maxiter=100):
+def kmeans(features, k, n_iter=100):
     centroids = dict((c, [c]) for c in features[:k])
-    print "Centroids step 1:", centroids
     centroids[features[k-1]] += features[k:]
-    print "Centroids step 2:", centroids
-    for i in range(maxiter):
-        new_centroids = assign(centroids)
-        new_centroids = update((new_centroids))
+    for i in range(n_iter):
+        new_centroids = assign_cluster(centroids)
+        new_centroids = update(new_centroids)
         if centroids == new_centroids:
+            print "KMeans has converged with n_iter=", n_iter
             break
         else:
             centroids = new_centroids
@@ -79,7 +79,7 @@ def predict():
     features = data
     clusters = kmeans(features, 7)
     count = 1
-    with open('../predictions/kmeans_2.txt', 'w') as out:
+    with open(submission_path, 'w') as out:
         for c in clusters:
             print "Size of cluster: ", len(clusters[c])
             for x in clusters[c]:
@@ -92,10 +92,11 @@ def create_submission_file(path):
     solution.indices = solution.indices.astype(int)
     solution.cluster = solution.cluster.astype(int)
     solution = solution.sort_values(by='indices', ascending=True)
-    solution.to_csv('../predictions/kmeans_sub_2.txt', columns=['cluster'], index=False, header=False)
+    solution.to_csv(submission_path, columns=['cluster'], index=False, header=False)
+    print "Silhouette score", silhouette_score(np.asarray(load_data()), solution.cluster, metric='euclidean')
 
 
 if __name__ == "__main__":
     predict()
-    create_submission_file('../predictions/kmeans_1.txt')
+    create_submission_file(submission_path)
 

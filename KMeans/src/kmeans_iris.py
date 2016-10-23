@@ -2,54 +2,51 @@
 # -*- coding: utf-8 -*-
 
 from __future__ import division
+from sklearn.metrics import silhouette_score
 import sys
 from collections import defaultdict
-import random
-import operator
 import numpy as np
-import math
 import pandas as pd
+import math
+
+DATA = '../data/iris.csv'
+submission_path= '../predictions/kmeans_iris_2.txt'
 
 
 def load_data():
-    data = [l.strip() for l in open('../data/iris.csv') if l.strip()]
+    data = [l.strip() for l in open(DATA) if l.strip()]
     features = [tuple(map(float, x.split(',')[:-1])) for x in data]
     labels = [x.split(',')[-1] for x in data]
-
-    # indices = list(xrange(1, 8581))
-    # return dict(zip(features, indices))
     return features
 
 
 def euc_distance(f1, f2):
     a = np.array
     d = a(f1)-a(f2)
-    return np.sqrt(np.dot(d, d))
+    return np.sqrt(dot(d, d))
 
 
-def dot_product(f1, f2):
-    return sum(map(operator.mul, f1, f2))
+def dot(v, w):
+    return sum(v_i * w_i for v_i, w_i in zip(v,w))
 
 
 def cosine(f1, f2):
-    prod = dot_product(f1, f2)
-    len1 = math.sqrt(dot_product(f1, f1))
-    len2 = math.sqrt(dot_product(f2, f2))
+    prod = dot(f1, f2)
+    len1 = math.sqrt(dot(f1, f2))
+    len2 = math.sqrt(dot(f1, f2))
     return prod / (len1 * len2)
 
 
-def mean(feats):
-    return tuple(np.mean(feats, axis=0))
+def mean(features):
+    return tuple(np.mean(features, axis=0))
 
 
-def assign(centroids):
+def assign_cluster(centroids):
     new_centroids = defaultdict(list)
     for cx in centroids:
-        print cx
         for x in centroids[cx]:
-            # best = min(centroids, key=lambda c: 1-cosine(x, c))
-            best = min(centroids, key=lambda c: euc_distance(x, c))
-            new_centroids[best] += [x]
+            lease_dist = min(centroids, key=lambda c: euc_distance(x, c))
+            new_centroids[lease_dist] += [x]
     return new_centroids
 
 
@@ -60,34 +57,31 @@ def update(centroids):
     return new_centroids
 
 
-def kmeans(features, k, maxiter=200):
+def kmeans(features, k, n_iter=100):
     centroids = dict((c, [c]) for c in features[:k])
     centroids[features[k-1]] += features[k:]
-    for i in range(maxiter):
-        new_centroids = assign(centroids)
+    for i in range(n_iter):
+        new_centroids = assign_cluster(centroids)
         new_centroids = update(new_centroids)
         if centroids == new_centroids:
+            print "KMeans has converged with n_iter=", n_iter
             break
         else:
             centroids = new_centroids
     return centroids
 
 
-def predict(seed):
+def predict_clusters():
     try:
-        data = load_data()
+        features = load_data()
     except:
+        print "Could not load data. Exiting...."
         sys.exit(1)
-    # print data
-    # features = data.keys()
-    features = data
-    random.seed(seed)
-    # random.shuffle(features)
     clusters = kmeans(features, 3)
     count = 1
-    with open('../predictions/kmeans_iris_1.txt', 'w') as out:
+    with open(submission_path, 'w') as out:
         for c in clusters:
-            print "Size :", len(clusters[c])
+            print "Size of cluster ", count, len(clusters[c])
             for x in clusters[c]:
                 out.write(str(features.index(x)) + "," +str(count) + "\n")
             count += 1
@@ -98,10 +92,12 @@ def create_submission_file(path):
     solution.indices = solution.indices.astype(int)
     solution.cluster = solution.cluster.astype(int)
     solution = solution.sort_values(by='indices', ascending=True)
-    solution.to_csv('../predictions/kmeans_iris_1.txt', columns=['cluster'], index=False, header=False)
+    solution.to_csv(submission_path, columns=['cluster'], index=False, header=False)
+    print "Silhouette score", silhouette_score(np.asarray(load_data()), solution.cluster, metric='euclidean')
 
 
 if __name__ == "__main__":
-    predict(22)
-    create_submission_file('../predictions/kmeans_iris_1.txt')
+    predict_clusters()
+    create_submission_file(submission_path)
+
 

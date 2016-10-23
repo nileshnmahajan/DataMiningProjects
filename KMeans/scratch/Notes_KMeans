@@ -46,4 +46,6 @@ Total: 8556
 
 10/22 and 10/23
 
+1) kmeans_2.txt contains the output of 10-component PCA from a pickled model and kmeans_text.py : 0.55 (best score yet)
+2) kmeans_3.txt contains the output of 10-component PCA from a pickled model and kmeans_text.py after refactoring. TFIDF is now with smooth idf. CHECK SCORE ON MINER
 

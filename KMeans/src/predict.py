@@ -16,11 +16,15 @@
 #             if "6" in line:
 #                 new.write("7"+ "\n")
 
-from sklearn.metrics import v_measure_score
+from sklearn.metrics import v_measure_score, homogeneity_score, completeness_score, silhouette_score
 import numpy as np
 
-with open('../data/true_labels.txt', 'r') as true:
-    with open('../data/true_labels_num.txt', 'w') as iris_true:
+TRUE_LABELS = '../data/true_labels.txt'
+TRUE_LABELS_NUM = '../data/true_labels_num.txt'
+PRED_PATH = '../predictions/kmeans_iris_2.txt'
+
+with open(TRUE_LABELS, 'r') as true:
+    with open(TRUE_LABELS_NUM, 'w') as iris_true:
         for line in true:
             if 'Iris-setosa' in line:
                 iris_true.write("1" + "\n")
@@ -30,10 +34,9 @@ with open('../data/true_labels.txt', 'r') as true:
                 iris_true.write("3" + "\n")
 
 
-true_labels = np.genfromtxt('../data/true_labels_num.txt')
-print true_labels
+true_labels = np.genfromtxt(TRUE_LABELS_NUM)
+iris_pred = np.genfromtxt(PRED_PATH)
 
-iris_pred = np.genfromtxt('../predictions/kmeans_iris_1.txt')
-print iris_pred
-
-print v_measure_score(true_labels, iris_pred)
+print "V-score", v_measure_score(true_labels, iris_pred)
+print "Homogeneity score", homogeneity_score(true_labels, iris_pred)
+print "Completeness score", completeness_score(true_labels, iris_pred)

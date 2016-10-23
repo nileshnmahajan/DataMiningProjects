@@ -24,7 +24,7 @@ X = v.fit_transform(data)
 start = time()
 
 
-tfidf = TfidfTransformer(norm='l2', use_idf=True)
+tfidf = TfidfTransformer(norm='l2', use_idf=True, smooth_idf=True)
 trans_X = tfidf.fit_transform(X)
 
 # svd = TruncatedSVD(n_components=10, algorithm='randomized')
@@ -37,26 +37,21 @@ trans_X = tfidf.fit_transform(X)
 
 pca = joblib.load('pca_10.pkl')
 
+
+print "Loaded model in ", time() - start
+
 reduced_X = pca.fit_transform(trans_X.toarray())
 
 try:
     X_arr = tuple(map(tuple, reduced_X))
-
     reduced_featurespace = list(X_arr)
-
 except:
+
+    print "Could not create a list of reduced featurespace"
     sys.exit(1)
-
-# print len(reduced_featurespace)
-# print reduced_featurespace
-
-print "Elapsed time: ", time() - start
 
 
 try:
-
-    # print svd.explained_variance_
-    # print svd.components_
 
     print "Explained variance", pca.explained_variance_
     print "Components", pca.components_
@@ -64,3 +59,4 @@ try:
 except:
     pass
 
+print "Elapsed time: ", time() - start
