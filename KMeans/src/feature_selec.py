@@ -1,14 +1,9 @@
 from sklearn.feature_extraction.text import TfidfTransformer
 from sklearn.feature_extraction import DictVectorizer
-from sklearn.decomposition import TruncatedSVD, PCA
-# from sklearn.cluster import KMeans
+from sklearn.decomposition import PCA
 from time import time
 import sys
 from sklearn.externals import joblib
-import random
-import numpy as np
-import pandas as pd
-from sklearn.metrics.pairwise import cosine_similarity
 
 data = []
 
@@ -27,6 +22,8 @@ start = time()
 tfidf = TfidfTransformer(norm='l2', use_idf=True, smooth_idf=True)
 trans_X = tfidf.fit_transform(X)
 
+print "Shape of original featureset: ", trans_X.shape
+
 # svd = TruncatedSVD(n_components=10, algorithm='randomized')
 # reduced_X = svd.fit_transform(trans_X)
 
@@ -37,10 +34,12 @@ trans_X = tfidf.fit_transform(X)
 
 pca = joblib.load('pca_10.pkl')
 
-
 print "Loaded model in ", time() - start
 
 reduced_X = pca.fit_transform(trans_X.toarray())
+
+joblib.dump(reduced_X, 'reduced_X.pkl')
+
 
 try:
     X_arr = tuple(map(tuple, reduced_X))

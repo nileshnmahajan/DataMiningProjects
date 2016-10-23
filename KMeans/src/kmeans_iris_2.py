@@ -2,21 +2,22 @@
 # -*- coding: utf-8 -*-
 
 from __future__ import division
+from sklearn.metrics import silhouette_score
 import sys
 from collections import defaultdict
-import operator
-import random
 import numpy as np
-import math
-from feature_selec import reduced_featurespace
 import pandas as pd
-from sklearn.metrics import silhouette_score
+import math
+import random
 
-submission_path= '../predictions/kmeans_3_random.txt'
+DATA = '../data/iris.csv'
+submission_path= '../predictions/kmeans_iris_3.txt'
 
 
 def load_data():
-    features = reduced_featurespace
+    data = [l.strip() for l in open(DATA) if l.strip()]
+    features = [tuple(map(float, x.split(',')[:-1])) for x in data]
+    labels = [x.split(',')[-1] for x in data]
     return features
 
 
@@ -37,8 +38,8 @@ def cosine(f1, f2):
     return prod / (len1 * len2)
 
 
-def mean(feats):
-    return tuple(np.mean(feats, axis=0))
+def mean(features):
+    return tuple(np.mean(features, axis=0))
 
 
 def assign_cluster(centroids):
@@ -58,11 +59,17 @@ def update(centroids):
 
 
 def kmeans(features, k, n_iter=100):
-    # centroids = dict((c, [c]) for c in features[:k])
-    # centroids[features[k-1]] += features[k:]
+    # centroids = dict((features.index(c), c) for c in features[:k])
     feature_sample = random.sample(features, k)
+    print "Feature sample", feature_sample
     centroids = dict((c, [c]) for c in feature_sample)
-    centroids[feature_sample[k - 1]] += features[k:]
+    # centroids = dict((c, [c]) for c in features[:k])
+    print centroids
+    # temp = random.sample(features, 3)
+    # centroids = dict((temp, [temp]) for temp in features[:k])
+    # print centroids
+    centroids[feature_sample[k-1]] += features[k:]
+    print "here", centroids
     for i in range(n_iter):
         new_centroids = assign_cluster(centroids)
         new_centroids = update(new_centroids)
@@ -74,18 +81,17 @@ def kmeans(features, k, n_iter=100):
     return centroids
 
 
-def predict():
+def predict_clusters():
     try:
-        data = load_data()
+        features = load_data()
     except:
-        print "Could not load data. Exiting..."
+        print "Could not load data. Exiting...."
         sys.exit(1)
-    features = data
-    clusters = kmeans(features, 7)
+    clusters = kmeans(features, 3)
     count = 1
     with open(submission_path, 'w') as out:
         for c in clusters:
-            print "Size of cluster: ", len(clusters[c])
+            print "Size of cluster ", count, len(clusters[c])
             for x in clusters[c]:
                 out.write(str(features.index(x)) + "," +str(count) + "\n")
             count += 1
@@ -101,6 +107,7 @@ def create_submission_file(path):
 
 
 if __name__ == "__main__":
-    predict()
+    predict_clusters()
     create_submission_file(submission_path)
+
 
