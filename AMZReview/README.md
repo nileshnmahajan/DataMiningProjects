@@ -13,6 +13,7 @@
 6. Depending on your installation, NLTK might require WordNet and stopwords data. To install these, run python.
 
    >> import nltk
+   
    >> nltk.download()
 
    When the graphical installer appears, select WordNet and stopwords from Corpora and install.
@@ -24,8 +25,8 @@ I've processed the test.data and train.data files for white spaces, formatting a
 Some of the steps I've taken to process these files are in preprocess.py but I've used a combination of Unix commands and Python.
 The classifier will not work on the train.data & test.data directly.
 
-1. Run src/feature_extraction.py first. This usually takes about 20 minutes to generate 19 CSV files that contain similarity measures for train and test data.
-2. Now run knn.py without any command line arguments. To change the value of k, edit the last line in knn.py `knn_classifier(379)`.
+1. Run `src/feature_extraction.py` first. This usually takes about 20 minutes to generate 19 CSV files that contain similarity measures for train and test data.
+2. Now run `knn.py` without any command line arguments. To change the value of `k`, edit the last line in `knn.py` `knn_classifier(379)`.
 
-knn.py creates a submission.txt file that contains 18506 rows with either a +1 or a -1.
+`knn.py` creates a submission.txt file that contains 18506 rows with either a +1 or a -1.
 
