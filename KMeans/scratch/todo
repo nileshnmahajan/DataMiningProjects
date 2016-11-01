@@ -1,6 +1,0 @@
--- 1. kmeans_iris: refactor methods for mean, euc_distance, dot_product
-2. kmeans_iris: randomize centroid selection
--- 3. kmeans_text: refactor mean, euc_distance, dot_product
-4. feature_selec: test without tfidf
-5. feature_selec: test with specific parameters in tf_idf
---6. featue_selec: upload results from pca -- got 0.55
