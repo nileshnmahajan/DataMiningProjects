@@ -10,5 +10,5 @@ Homework for CS584
 
 3) [HW3 KMeans Clustering on Text] (https://github.com/bhavikat/DataMiningClass/tree/master/KMeans)
 
-4) HW4 Movie Recommender System
+4) [HW4 Movie Recommender System] (https://github.com/bhavikat/DMClass/tree/master/Recommender)
 
