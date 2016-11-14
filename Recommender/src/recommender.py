@@ -9,4 +9,4 @@ model = gl.factorization_recommender.create(train_sf,  side_data_factorization=T
 
 op = model.predict(test_sf)
 
-op.save('../predictions/final_76_3.txt', format='csv')
+op.save('../predictions/final.txt', format='csv')
