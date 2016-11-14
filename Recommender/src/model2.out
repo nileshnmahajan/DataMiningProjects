@@ -1,0 +1,18 @@
+[INFO] graphlab.cython.cy_server: GraphLab Create v2.1 started. Logging: /tmp/graphlab_server_1479005921.log
+This non-commercial license of GraphLab Create for academic use is assigned to btekwani@gmu.edu and will expire on November 03, 2017.
+Finished parsing file /home/bhavika/PycharmProjects/Recommender/src/movies_sf.csv
+Parsing completed. Parsed 10195 lines in 0.356711 secs.
+[INFO] graphlab.deploy.job: Validating job.
+[INFO] graphlab.deploy.job: Creating a LocalAsync environment called 'async'.
+[INFO] graphlab.deploy.map_job: Validation complete. Job: 'Model-Parameter-Search-Nov-12-2016-21-58-4600000' ready for execution
+[INFO] graphlab.deploy.map_job: Job: 'Model-Parameter-Search-Nov-12-2016-21-58-4600000' scheduled.
+[INFO] graphlab.deploy.job: Validating job.
+[INFO] graphlab.deploy.map_job: A job with name 'Model-Parameter-Search-Nov-12-2016-21-58-4600000' already exists. Renaming the job to 'Model-Parameter-Search-Nov-12-2016-21-58-4600000-14c17'.
+[INFO] graphlab.deploy.map_job: Validation complete. Job: 'Model-Parameter-Search-Nov-12-2016-21-58-4600000-14c17' ready for execution
+[INFO] graphlab.deploy.map_job: Job: 'Model-Parameter-Search-Nov-12-2016-21-58-4600000-14c17' scheduled.
+[INFO] graphlab.deploy.job: Validating job.
+[INFO] graphlab.deploy.map_job: Validation complete. Job: 'Model-Parameter-Search-Nov-12-2016-21-58-4600001' ready for execution
+[INFO] graphlab.deploy.map_job: Job: 'Model-Parameter-Search-Nov-12-2016-21-58-4600001' scheduled.
+[INFO] graphlab.deploy.job: Validating job.
+[INFO] graphlab.deploy.map_job: Validation complete. Job: 'Model-Parameter-Search-Nov-12-2016-21-58-4600002' ready for execution
+[INFO] graphlab.deploy.map_job: Job: 'Model-Parameter-Search-Nov-12-2016-21-58-4600002' scheduled.

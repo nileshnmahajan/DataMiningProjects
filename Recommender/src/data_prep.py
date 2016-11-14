@@ -1,15 +1,17 @@
 import pandas as pd
 import graphlab as gl
 
-movie_genres = pd.read_csv('../data/movie_genres.dat', sep='\t')
 train = pd.read_csv('../data/train.dat', sep=' ')
 test = pd.read_csv('../data/test.dat', sep=' ')
 actors_df = pd.read_csv('../data/movie_actors.dat', sep='\t')
 usertags_df = pd.read_csv('../data/user_taggedmovies.dat', sep=' ')
 tags_wt = pd.read_csv('../data/movie_tags.dat', sep='\t')
 directors_df = pd.read_csv('../data/movie_directors.dat', sep='	')
-top_actors = pd.read_csv('../data/top_actors_2.txt')
-top_directors = pd.read_csv('../data/top_directors_2.txt')
+top_actors = pd.read_csv('../data/top_actors.txt')
+top_directors = pd.read_csv('../data/top_directors.txt')
+movie_genres = pd.read_csv('../data/movie_genres.dat', sep='\t')
+
+
 
 topdirectors = list(top_directors['directorID'].unique())
 genres = list(movie_genres['genre'].unique())
@@ -63,4 +65,5 @@ train_sf_red = train_sf.filter_by(rare_movies['movieID'], 'movieID', exclude=Tru
 rare_users = train_sf.groupby('user_id', gl.aggregate.COUNT).sort('Count')
 rare_users = rare_users[rare_users['Count'] <= 10]
 train_sf_red = train_sf.filter_by(rare_users['user_id'], 'user_id', exclude=True)
+
 

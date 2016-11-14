@@ -1,0 +1,11 @@
+actorID,occurrence
+steve_buscemi,31
+samuel_l_jackson,29
+christopher_walken,25
+frank_welker,23
+michael_caine,23
+richard_jenkins,23
+gene_hackman,22
+harvey_keitel,22
+ben_stiller,21
+bruce_willis,21

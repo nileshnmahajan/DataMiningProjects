@@ -1,0 +1,35 @@
+[INFO] graphlab.cython.cy_server: GraphLab Create v2.1 started. Logging: /tmp/graphlab_server_1479006116.log
+This non-commercial license of GraphLab Create for academic use is assigned to btekwani@gmu.edu and will expire on November 03, 2017.
+Finished parsing file /home/bhavika/PycharmProjects/Recommender/src/movies_sf.csv
+Parsing completed. Parsed 10195 lines in 0.4083 secs.
+[INFO] graphlab.deploy.job: Validating job.
+INFO:graphlab.deploy.job:Validating job.
+[INFO] graphlab.deploy.job: Creating a LocalAsync environment called 'async'.
+INFO:graphlab.deploy.job:Creating a LocalAsync environment called 'async'.
+[INFO] graphlab.deploy.map_job: Validation complete. Job: 'Model-Parameter-Search-Nov-12-2016-22-02-0400000' ready for execution
+INFO:graphlab.deploy.map_job:Validation complete. Job: 'Model-Parameter-Search-Nov-12-2016-22-02-0400000' ready for execution
+Created new window in existing browser session.
+[INFO] graphlab.deploy.map_job: Job: 'Model-Parameter-Search-Nov-12-2016-22-02-0400000' scheduled.
+INFO:graphlab.deploy.map_job:Job: 'Model-Parameter-Search-Nov-12-2016-22-02-0400000' scheduled.
+[INFO] graphlab.deploy.job: Validating job.
+INFO:graphlab.deploy.job:Validating job.
+[INFO] graphlab.deploy.map_job: A job with name 'Model-Parameter-Search-Nov-12-2016-22-02-0400000' already exists. Renaming the job to 'Model-Parameter-Search-Nov-12-2016-22-02-0400000-1735e'.
+INFO:graphlab.deploy.map_job:A job with name 'Model-Parameter-Search-Nov-12-2016-22-02-0400000' already exists. Renaming the job to 'Model-Parameter-Search-Nov-12-2016-22-02-0400000-1735e'.
+[INFO] graphlab.deploy.map_job: Validation complete. Job: 'Model-Parameter-Search-Nov-12-2016-22-02-0400000-1735e' ready for execution
+INFO:graphlab.deploy.map_job:Validation complete. Job: 'Model-Parameter-Search-Nov-12-2016-22-02-0400000-1735e' ready for execution
+[INFO] graphlab.deploy.map_job: Job: 'Model-Parameter-Search-Nov-12-2016-22-02-0400000-1735e' scheduled.
+INFO:graphlab.deploy.map_job:Job: 'Model-Parameter-Search-Nov-12-2016-22-02-0400000-1735e' scheduled.
+[INFO] graphlab.deploy.job: Validating job.
+INFO:graphlab.deploy.job:Validating job.
+[INFO] graphlab.deploy.map_job: Validation complete. Job: 'Model-Parameter-Search-Nov-12-2016-22-02-0400001' ready for execution
+INFO:graphlab.deploy.map_job:Validation complete. Job: 'Model-Parameter-Search-Nov-12-2016-22-02-0400001' ready for execution
+[INFO] graphlab.deploy.map_job: Job: 'Model-Parameter-Search-Nov-12-2016-22-02-0400001' scheduled.
+INFO:graphlab.deploy.map_job:Job: 'Model-Parameter-Search-Nov-12-2016-22-02-0400001' scheduled.
+[INFO] graphlab.deploy.job: Validating job.
+INFO:graphlab.deploy.job:Validating job.
+[INFO] graphlab.deploy.map_job: Validation complete. Job: 'Model-Parameter-Search-Nov-12-2016-22-02-0400002' ready for execution
+INFO:graphlab.deploy.map_job:Validation complete. Job: 'Model-Parameter-Search-Nov-12-2016-22-02-0400002' ready for execution
+[INFO] graphlab.deploy.map_job: Job: 'Model-Parameter-Search-Nov-12-2016-22-02-0400002' scheduled.
+INFO:graphlab.deploy.map_job:Job: 'Model-Parameter-Search-Nov-12-2016-22-02-0400002' scheduled.
+[INFO] graphlab.deploy._job: Exception when parsing file /home/bhavika/.graphlab/artifacts/results/job-results-97a98de1-f028-4fd6-8d13-c7e1f2a50f17/status. Error: No JSON object could be decoded
+INFO:graphlab.deploy._job:Exception when parsing file /home/bhavika/.graphlab/artifacts/results/job-results-97a98de1-f028-4fd6-8d13-c7e1f2a50f17/status. Error: No JSON object could be decoded

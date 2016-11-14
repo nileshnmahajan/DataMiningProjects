@@ -1,0 +1,38 @@
+[INFO] graphlab.cython.cy_server: GraphLab Create v2.1 started. Logging: /tmp/graphlab_server_1479005961.log
+This non-commercial license of GraphLab Create for academic use is assigned to btekwani@gmu.edu and will expire on November 03, 2017.
+Finished parsing file /home/bhavika/PycharmProjects/Recommender/src/movies_sf.csv
+Parsing completed. Parsed 10195 lines in 0.476952 secs.
+[INFO] graphlab.deploy.job: Validating job.
+INFO:graphlab.deploy.job:Validating job.
+[INFO] graphlab.deploy.job: Creating a LocalAsync environment called 'async'.
+INFO:graphlab.deploy.job:Creating a LocalAsync environment called 'async'.
+[INFO] graphlab.deploy.map_job: Validation complete. Job: 'Model-Parameter-Search-Nov-12-2016-21-59-2700000' ready for execution
+INFO:graphlab.deploy.map_job:Validation complete. Job: 'Model-Parameter-Search-Nov-12-2016-21-59-2700000' ready for execution
+[INFO] graphlab.deploy.map_job: Job: 'Model-Parameter-Search-Nov-12-2016-21-59-2700000' scheduled.
+INFO:graphlab.deploy.map_job:Job: 'Model-Parameter-Search-Nov-12-2016-21-59-2700000' scheduled.
+Created new window in existing browser session.
+[INFO] graphlab.deploy.job: Validating job.
+INFO:graphlab.deploy.job:Validating job.
+[INFO] graphlab.deploy.map_job: A job with name 'Model-Parameter-Search-Nov-12-2016-21-59-2700000' already exists. Renaming the job to 'Model-Parameter-Search-Nov-12-2016-21-59-2700000-20f62'.
+INFO:graphlab.deploy.map_job:A job with name 'Model-Parameter-Search-Nov-12-2016-21-59-2700000' already exists. Renaming the job to 'Model-Parameter-Search-Nov-12-2016-21-59-2700000-20f62'.
+[INFO] graphlab.deploy.map_job: Validation complete. Job: 'Model-Parameter-Search-Nov-12-2016-21-59-2700000-20f62' ready for execution
+INFO:graphlab.deploy.map_job:Validation complete. Job: 'Model-Parameter-Search-Nov-12-2016-21-59-2700000-20f62' ready for execution
+[INFO] graphlab.deploy.map_job: Job: 'Model-Parameter-Search-Nov-12-2016-21-59-2700000-20f62' scheduled.
+INFO:graphlab.deploy.map_job:Job: 'Model-Parameter-Search-Nov-12-2016-21-59-2700000-20f62' scheduled.
+[INFO] graphlab.deploy.job: Validating job.
+INFO:graphlab.deploy.job:Validating job.
+[INFO] graphlab.deploy.map_job: Validation complete. Job: 'Model-Parameter-Search-Nov-12-2016-21-59-2700001' ready for execution
+INFO:graphlab.deploy.map_job:Validation complete. Job: 'Model-Parameter-Search-Nov-12-2016-21-59-2700001' ready for execution
+[INFO] graphlab.deploy.map_job: Job: 'Model-Parameter-Search-Nov-12-2016-21-59-2700001' scheduled.
+INFO:graphlab.deploy.map_job:Job: 'Model-Parameter-Search-Nov-12-2016-21-59-2700001' scheduled.
+[INFO] graphlab.deploy.job: Validating job.
+INFO:graphlab.deploy.job:Validating job.
+[INFO] graphlab.deploy.map_job: Validation complete. Job: 'Model-Parameter-Search-Nov-12-2016-21-59-2700002' ready for execution
+INFO:graphlab.deploy.map_job:Validation complete. Job: 'Model-Parameter-Search-Nov-12-2016-21-59-2700002' ready for execution
+[INFO] graphlab.deploy.map_job: Job: 'Model-Parameter-Search-Nov-12-2016-21-59-2700002' scheduled.
+INFO:graphlab.deploy.map_job:Job: 'Model-Parameter-Search-Nov-12-2016-21-59-2700002' scheduled.
+Canvas is accessible via web browser at the URL: http://localhost:36429/index.html
+Opening Canvas in default web browser.
+Less than 4 successfully started. Using only 3 workers.
+All operations will proceed as normal, but lambda operations will not be able to use all available cores.
+(The location of the log file is printed at the start of the GraphLab server).
