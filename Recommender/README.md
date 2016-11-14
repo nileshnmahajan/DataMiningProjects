@@ -25,7 +25,7 @@ The folder HW4_tekwani/explore contains SQL scripts used for basic exploratory a
 the top_actors.txt and top_directors.txt in the `data` directory.
 
 The file `recommender.py` is the model I used to submit the solution on the leaderboard.
-You only need to run this file to get the final_76_3.txt file.
+You only need to run this file to get the final.txt file.
 
 
 ### Other files
