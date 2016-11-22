@@ -1,8 +1,6 @@
 # DataMiningClass
-Notes and assignments for CS584
 
-
-Homework for CS584
+Data Mining Projects for CS584 
 
 1) [HW1 Amazon Review Classification] (https://github.com/bhavikat/DataMiningClass/tree/master/AMZReview)
 
