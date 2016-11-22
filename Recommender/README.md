@@ -14,7 +14,7 @@
    I have an Education license and you can use my license key if you have to run my solution.
    Install GraphLab in the `tekwani` virtual environment using:
    
-   pip install --upgrade --no-cache-dir https://get.graphlab.com/GraphLab-Create/2.1/<YOUR_EMAIL>/<YOUR_API_KEY>/GraphLab-Create-License.tar.gz
+   pip install --upgrade --no-cache-dir https://get.graphlab.com/GraphLab-Create/2.1/YOUR_EMAIL/YOUR_API_KEY/GraphLab-Create-License.tar.gz
 
 
 ### Running the solution
