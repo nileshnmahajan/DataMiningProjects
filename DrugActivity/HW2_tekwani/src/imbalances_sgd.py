@@ -48,12 +48,12 @@ def sampling():
 
         X_tr, y_tr = imbalance.fit_sample(X_tr, y_tr)
 
-        print ("------------")
-        print ("%s " %imbalance)
-        print ("------------")
+        print(("------------"))
+        print(("%s " %imbalance))
+        print(("------------"))
 
         clf.fit(X_tr, y_tr)
-        print ("-------------")
+        print(("-------------"))
 
         print("%s   " % clf)
         print('-----------------')
@@ -73,6 +73,6 @@ def sampling():
 sampling()
 
 
-print "The best parameters for each imbalanced learning method: "
-print "------------------------------------------------"
-print best_dict
+print("The best parameters for each imbalanced learning method: ")
+print("------------------------------------------------")
+print(best_dict)

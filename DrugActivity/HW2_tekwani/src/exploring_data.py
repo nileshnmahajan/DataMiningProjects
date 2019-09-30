@@ -18,7 +18,7 @@ def save_sparse_matrix(array):
              array.indptr, shape=array.shape)
 
 
-print df_test
+print(df_test)
 
 vec = CountVectorizer(binary=True, vocabulary=[str(i) for i in range(100000)])
 X_train = vec.fit_transform(df_train['Structure'])
@@ -28,15 +28,15 @@ Y_train = df_train['Active']
 train_labels = Y_train.values
 
 #
-# print "Are train labels now an array?" , type(train_labels)
+# print("Are train labels now an array?" , type(train_labels))
 #
-# print "Type of train class labels", type(Y)
+# print("Type of train class labels", type(Y))
 #
 Y_train.to_csv('baseline_train.txt', index=False)
 #
 #
-print "X_train ", X_train
-print "X_test ", X_test
+print("X_train ", X_train)
+print("X_test ", X_test)
 
 
 featurespace_dense_train = X_train.toarray()
@@ -48,5 +48,5 @@ vt = selector.fit_transform(X_train)
 
 t = time()
 save_sparse_matrix(vt)
-print "Variance threshold calculated in ", (time() - t)
+print("Variance threshold calculated in ", (time() - t))
 

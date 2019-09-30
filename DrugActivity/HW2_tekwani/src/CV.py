@@ -35,10 +35,10 @@ create_new_featurespace()
 
 skf = StratifiedKFold(y_train, n_folds=5, shuffle=True)
 
-print "No of folds in Stratified K-Fold", skf.n_folds
+print("No of folds in Stratified K-Fold", skf.n_folds)
 
 for train_index, test_index in skf:
-    # print ("TRAIN:", train_index, "TEST:", test_index)
+    # print(("TRAIN:", train_index, "TEST:", test_index))
     X_train, y_true = df_reduced_train.iloc[train_index], y_train[train_index]
     X_test, y_test = df_reduced_train.iloc[test_index], y_train[test_index]
 
@@ -49,16 +49,16 @@ clf.fit(X_train, y_true)
 
 Z = clf.predict(X_test)
 
-print "Classified drugs from test set in : ", (time() - start)
-print "Precision: ", precision_score(y_test, Z)
-print "Recall: ", recall_score(y_test, Z)
-print "F1 score: " , f1_score(y_test, Z,  average='binary')
+print("Classified drugs from test set in : ", (time() - start))
+print("Precision: ", precision_score(y_test, Z))
+print("Recall: ", recall_score(y_test, Z))
+print("F1 score: " , f1_score(y_test, Z,  average='binary'))
 
 print("Classification report")
 
-print "-------------------------------"
+print("-------------------------------")
 
-print classification_report(y_test, Z, target_names=['Inactive', 'Active'])
+print(classification_report(y_test, Z, target_names=['Inactive', 'Active']))
 
 
 print('auc', roc_auc_score(y_test, clf.predict_proba(X_test)[:, 1]))

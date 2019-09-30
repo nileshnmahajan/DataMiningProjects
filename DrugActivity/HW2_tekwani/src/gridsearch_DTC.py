@@ -23,15 +23,15 @@ grid_tree = GridSearchCV(dt_clf, param_grid=parameters_grid, scoring=f1_scorer)
 
 grid_tree.fit(df_reduced_train.values, y_train)
 
-print "Grid scores: --------"
-print grid_tree.grid_scores_
-print "Best estimator----"
-print grid_tree.best_estimator_
-print "Best params ----"
-print grid_tree.best_params_
-print "Best score: ", grid_tree.best_score_
+print("Grid scores: --------")
+print(grid_tree.grid_scores_)
+print("Best estimator----")
+print(grid_tree.best_estimator_)
+print("Best params ----")
+print(grid_tree.best_params_)
+print("Best score: ", grid_tree.best_score_)
 
-print "Finished in: ", (time() - dt_start)
+print("Finished in: ", (time() - dt_start))
 
 
 

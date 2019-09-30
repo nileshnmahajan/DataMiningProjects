@@ -34,17 +34,17 @@ gs.fit(X_tr, y_tr)
 
 y_pred = gs.predict(X_te)
 
-print "Grid scores: --------"
-print gs.grid_scores_
-print "Best estimator----"
-print gs.best_estimator_
-print "Best params ----"
-print gs.best_params_
-print "Best score: ", gs.best_score_
-print "Finished in: ", (time() - start)
+print("Grid scores: --------")
+print(gs.grid_scores_)
+print("Best estimator----")
+print(gs.best_estimator_)
+print("Best params ----")
+print(gs.best_params_)
+print("Best score: ", gs.best_score_)
+print("Finished in: ", (time() - start))
 
-print ("Classification report: ")
+print(("Classification report: "))
 
-print classification_report(y_te, y_pred)
+print(classification_report(y_te, y_pred))
 
 

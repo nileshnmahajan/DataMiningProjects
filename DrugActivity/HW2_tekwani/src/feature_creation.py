@@ -32,9 +32,9 @@ variance_thresh = 0.04
 
 idx = np.where(v.variances_ > variance_thresh)[0]
 
-print "No of features: ", len(idx)
+print("No of features: ", len(idx))
 
-print "Time taken to fit VarianceThreshold: ", (time() - start)
+print("Time taken to fit VarianceThreshold: ", (time() - start))
 
 df_reduced_train = pd.DataFrame(np.nan, index=range(X_train.shape[0]), columns=idx)
 df_reduced_test = pd.DataFrame(np.nan, index=range(X_test.shape[0]), columns=idx)

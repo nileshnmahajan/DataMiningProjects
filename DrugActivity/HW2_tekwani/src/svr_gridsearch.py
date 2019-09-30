@@ -22,6 +22,6 @@ selector = RFECV(estimator, step=1, cv=4)
 clf = GridSearchCV(selector, {'estimator_params': param_grid}, cv=7)
 clf.fit(X_train.toarray(), y_train)
 
-print clf.best_estimator_.estimator_
-print clf.best_estimator_.grid_scores_
-print clf.best_estimator_.ranking_
+print(clf.best_estimator_.estimator_)
+print(clf.best_estimator_.grid_scores_)
+print(clf.best_estimator_.ranking_)

@@ -25,14 +25,14 @@ f1_scorer = make_scorer(f1_score)
 gs = grid_search.GridSearchCV(clf, parameters, scoring=f1_scorer, n_jobs=-1)
 gs.fit(df_reduced_train.values, y_train)
 
-print "Grid scores: --------"
-print gs.grid_scores_
-print "Best estimator----"
-print gs.best_estimator_
-print "Best params ----"
-print gs.best_params_
-print "Best score: ", gs.best_score_
-print "Finished in: ", (time() - start)
+print("Grid scores: --------")
+print(gs.grid_scores_)
+print("Best estimator----")
+print(gs.best_estimator_)
+print("Best params ----")
+print(gs.best_params_)
+print("Best score: ", gs.best_score_)
+print("Finished in: ", (time() - start))
 
 
 

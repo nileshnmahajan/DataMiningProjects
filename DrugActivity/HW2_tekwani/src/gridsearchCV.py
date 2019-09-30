@@ -28,23 +28,23 @@ gs = grid_search.GridSearchCV(clf, parameters, scoring=f1_scorer, n_jobs=4)
 gs.fit(X_train, y_train)
 
 
-print "Grid scores: --------"
+print("Grid scores: --------")
 
 
-print gs.grid_scores_
+print(gs.grid_scores_)
 
 
-print "Best estimator----"
+print("Best estimator----")
 
-print gs.best_estimator_
+print(gs.best_estimator_)
 
-print "Best params ----"
+print("Best params ----")
 
-print gs.best_params_
+print(gs.best_params_)
 
-print "Best score: ", gs.best_score_
+print("Best score: ", gs.best_score_)
 
 
-print "Finished in: ", (time() - start)
+print("Finished in: ", (time() - start))
 
 subprocess.call(['spd-say', '"Finished execution."'])

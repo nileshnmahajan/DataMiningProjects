@@ -74,32 +74,32 @@ def create_new_featurespace():
 #Building the new, reduced featurespace
 create_new_featurespace()
 
-print "Created new featurespace"
+print("Created new featurespace")
 
 
-print "Running SMOTE"
+print("Running SMOTE")
 # SMOTE starts here
 ratio ='auto'
 
 smote = SMOTE(ratio=ratio, kind='regular')
 smox, smoy = smote.fit_sample(df_reduced_train.toarray(), y_train)
 
-print "Running the classifier"
+print("Running the classifier")
 
 clf = SGDClassifier(n_iter=3000, loss='log', class_weight={1:9}, penalty='elasticnet', shuffle=True)
 # clf.fit(X_train, y_train)
 clf.fit(smox, smoy)
 
-print "Predicting test output..."
+print("Predicting test output...")
 
 clf.predict(X_test)
 
 y_pred = clf.predict(X_test)
-print "Predicted values" , y_pred
+print("Predicted values" , y_pred)
 
 np.savetxt('../predictions/sgd_predictions_5.txt', y_pred, fmt='%i')
 
-print ("Finished classifying 350 drugs in: ", (time() - start))
+print(("Finished classifying 350 drugs in: ", (time() - start)))
 
 subprocess.call(['spd-say', '"Finished execution."'])
 

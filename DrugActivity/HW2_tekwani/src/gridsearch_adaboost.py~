@@ -23,7 +23,7 @@ parameters = [{'n_estimators': [50, 100, 500, 1000, 2500],
 skf = StratifiedKFold(y_train, n_folds=5, shuffle=True)
 
 for train_index, test_index in skf:
-    # print ("TRAIN:", train_index, "TEST:", test_index)
+    # print(("TRAIN:", train_index, "TEST:", test_index))
     X_train_skf, y_train_skf = df_reduced_train.iloc[train_index], y_train[train_index]
     X_test_skf, y_test_skf = df_reduced_train.iloc[test_index], y_train[test_index]
 
@@ -37,20 +37,20 @@ gs = GridSearchCV(ab, param_grid=parameters, scoring=f1_scorer)
 
 gs.fit(X_train_skf, y_train_skf)
 
-print "Grid scores: --------"
-print gs.grid_scores_
-print "Best estimator----"
-print gs.best_estimator_
-print "Best params ----"
-print gs.best_params_
-print "Best score: ", gs.best_score_
-print "Finished in: ", (time() - start)
+print("Grid scores: --------")
+print(gs.grid_scores_)
+print("Best estimator----")
+print(gs.best_estimator_)
+print("Best params ----")
+print(gs.best_params_)
+print("Best score: ", gs.best_score_)
+print("Finished in: ", (time() - start))
 
 y_true, y_pred = y_test_skf, gs.predict(X_test_skf)
 
-print ("Classification report: ")
+print(("Classification report: "))
 
-print classification_report(y_true, y_pred)
+print(classification_report(y_true, y_pred))
 
 
 
